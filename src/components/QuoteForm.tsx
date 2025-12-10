@@ -21,8 +21,8 @@ interface FormData {
   thatchCondition: string;
   
   // Step 3: Chimney & Heating
-  hasOpenFire: string;
-  hasWoodburner: string;
+  heatSource: string;
+  chimneySweptYearly: string;
   chimneyLined: string;
   chimneySweepFrequency: string;
   
@@ -54,8 +54,8 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
     thatchType: "",
     thatchAge: "",
     thatchCondition: "good",
-    hasOpenFire: "no",
-    hasWoodburner: "no",
+    heatSource: "",
+    chimneySweptYearly: "",
     chimneyLined: "yes",
     chimneySweepFrequency: "twice-yearly",
     coverType: "buildings-contents",
@@ -97,8 +97,9 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
     else if (formData.thatchType === "combed-wheat") basePrice += 100;
     
     // Heating factors
-    if (formData.hasOpenFire === "yes") basePrice += 120;
-    if (formData.hasWoodburner === "yes") basePrice += 100;
+    if (formData.heatSource === "open-fire") basePrice += 120;
+    if (formData.heatSource === "woodburner") basePrice += 100;
+    if (formData.chimneySweptYearly === "no") basePrice += 80;
     
     // Cover type
     if (formData.coverType === "buildings-only") basePrice *= 0.6;
@@ -134,7 +135,7 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
       case 2:
         return !!formData.thatchType && !!formData.thatchAge;
       case 3:
-        return true; // All have defaults
+        return !!formData.heatSource && !!formData.chimneySweptYearly;
       case 4:
         return true; // All have defaults
       case 5:
@@ -371,42 +372,44 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
 
           <div className="space-y-4">
             <div>
-              <Label className="text-foreground font-medium">Do you have any open fires?</Label>
+              <Label className="text-foreground font-medium">Heating setup</Label>
               <RadioGroup
-                value={formData.hasOpenFire}
-                onValueChange={(value) => updateFormData("hasOpenFire", value)}
-                className="flex gap-4 mt-2"
+                value={formData.heatSource}
+                onValueChange={(value) => updateFormData("heatSource", value)}
+                className="flex flex-wrap gap-3 mt-2"
               >
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="yes" id="fire-yes" />
-                  <Label htmlFor="fire-yes">Yes</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="no" id="fire-no" />
-                  <Label htmlFor="fire-no">No</Label>
-                </div>
+                {[
+                  { value: "woodburner", label: "Woodburner" },
+                  { value: "open-fire", label: "Open fire" },
+                  { value: "neither", label: "Neither" },
+                ].map((option) => (
+                  <div key={option.value} className="flex items-center space-x-2">
+                    <RadioGroupItem value={option.value} id={`heat-${option.value}`} />
+                    <Label htmlFor={`heat-${option.value}`}>{option.label}</Label>
+                  </div>
+                ))}
               </RadioGroup>
             </div>
 
             <div>
-              <Label className="text-foreground font-medium">Do you have a wood burner or multi-fuel stove?</Label>
+              <Label className="text-foreground font-medium">Is the chimney swept yearly?</Label>
               <RadioGroup
-                value={formData.hasWoodburner}
-                onValueChange={(value) => updateFormData("hasWoodburner", value)}
+                value={formData.chimneySweptYearly}
+                onValueChange={(value) => updateFormData("chimneySweptYearly", value)}
                 className="flex gap-4 mt-2"
               >
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="yes" id="woodburner-yes" />
-                  <Label htmlFor="woodburner-yes">Yes</Label>
+                  <RadioGroupItem value="yes" id="swept-yes" />
+                  <Label htmlFor="swept-yes">Yes</Label>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="no" id="woodburner-no" />
-                  <Label htmlFor="woodburner-no">No</Label>
+                  <RadioGroupItem value="no" id="swept-no" />
+                  <Label htmlFor="swept-no">No</Label>
                 </div>
               </RadioGroup>
             </div>
 
-            {(formData.hasOpenFire === "yes" || formData.hasWoodburner === "yes") && (
+            {formData.heatSource !== "neither" && formData.heatSource !== "" && (
               <>
                 <div>
                   <Label className="text-foreground font-medium">Is your chimney lined?</Label>

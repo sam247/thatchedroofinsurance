@@ -87,24 +87,38 @@ const ClaimsProcess = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center bg-primary-foreground/10 rounded-2xl p-8 md:p-12 backdrop-blur-sm border border-primary-foreground/20">
-          <h3 className="font-serif text-2xl font-semibold mb-4">
-            Need to Make a Claim?
-          </h3>
-          <p className="text-primary-foreground/80 mb-6 max-w-2xl mx-auto">
-            Our specialist claims team is ready to help. Call us now or send us a message and we'll get back to you within 2 hours during business hours.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="tel:01234567891">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full sm:w-auto">
-                <Phone className="w-5 h-5 mr-2" />
-                Call Claims: 01234 567 891
+        <div
+          className="relative text-center overflow-hidden rounded-2xl p-8 md:p-12 border border-primary-foreground/20"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="relative text-white">
+            <h3 className="font-serif text-2xl font-semibold mb-4">
+              Need to Make a Claim?
+            </h3>
+            <p className="text-white/85 mb-6 max-w-2xl mx-auto">
+              Our specialist claims team is ready to help. Call us now or send us a message and we'll get back to you within 2 hours during business hours.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <a href="tel:01234567891">
+                <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-semibold w-full sm:w-auto">
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call Claims: 01234 567 891
+                </Button>
+              </a>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white/60 text-white hover:bg-white/10 font-semibold w-full sm:w-auto"
+              >
+                <FileText className="w-5 h-5 mr-2" />
+                Start Online Claim
               </Button>
-            </a>
-            <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-semibold w-full sm:w-auto">
-              <FileText className="w-5 h-5 mr-2" />
-              Start Online Claim
-            </Button>
+            </div>
           </div>
         </div>
       </div>

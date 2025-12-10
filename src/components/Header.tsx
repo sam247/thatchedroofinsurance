@@ -33,16 +33,19 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-sm border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
-            <Image src="/logo.png" alt="Thatched Roof Insurance logo" width={48} height={48} className="rounded-lg" priority />
-            <div className="hidden sm:block leading-tight">
-              <span className="font-serif font-semibold text-foreground text-lg block">Thatched Roof</span>
-              <span className="text-primary font-medium block -mt-0.5">Insurance</span>
-            </div>
+          {/* Logo only */}
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo.png"
+              alt="Thatched Roof Insurance logo"
+              width={200}
+              height={64}
+              className="h-auto w-[200px]"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -51,7 +54,7 @@ const Header = () => {
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="text-muted-foreground hover:text-foreground transition-colors font-medium text-sm"
+                className="text-white hover:text-white/80 transition-colors font-medium text-sm"
               >
                 {link.label}
               </button>
@@ -62,13 +65,13 @@ const Header = () => {
           <div className="flex items-center gap-4">
             <a
               href="tel:01onal234567890"
-              className="hidden md:flex items-center gap-2 text-primary font-semibold"
+              className="hidden md:flex items-center gap-2 text-white font-semibold"
             >
               <Phone className="w-4 h-4" />
               <span>01onal 234 567 890</span>
             </a>
             <Link href="/quote">
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
+              <Button className="bg-white text-primary hover:bg-white/90 font-semibold">
                 Get a Quote
               </Button>
             </Link>
@@ -76,7 +79,7 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 text-foreground"
+              className="lg:hidden p-2 text-white"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -86,20 +89,20 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border animate-fade-in">
+          <div className="lg:hidden py-4 mt-2 rounded-xl border border-white/20 bg-black/80 text-white animate-fade-in">
             <nav className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => scrollToSection(link.href)}
-                  className="text-muted-foreground hover:text-foreground transition-colors font-medium py-2 text-left"
+                  className="text-white hover:text-white/80 transition-colors font-medium py-2 text-left"
                 >
                   {link.label}
                 </button>
               ))}
               <a
                 href="tel:01234567890"
-                className="flex items-center gap-2 text-primary font-semibold py-2"
+                className="flex items-center gap-2 text-white font-semibold py-2"
               >
                 <Phone className="w-4 h-4" />
                 <span>01234 567 890</span>
