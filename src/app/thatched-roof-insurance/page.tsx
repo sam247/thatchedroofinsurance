@@ -132,7 +132,7 @@ export default function ThatchedRoofInsurancePage() {
               <li>Schedule HETAS/NACS sweeps pre-winter and mid-season; keep digital certificates.</li>
               <li>Fit CO alarms in all rooms with solid fuel; add bird guard (not spark arrestor).</li>
               <li>Install fire barriers/membranes on re-thatch; follow Dorset Model on major works.</li>
-              <li>Burn only “Ready to Burn” wood (<20% moisture); avoid wet or scavenged timber.</li>
+              <li>Burn only “Ready to Burn” wood (&lt;20% moisture); avoid wet or scavenged timber.</li>
               <li>Document upgrades (CCTV flue inspections, liners, stove installs) for insurers.</li>
             </ul>
           </div>
