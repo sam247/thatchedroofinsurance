@@ -34,7 +34,7 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-transparent text-white">
-      <div className="container-custom">
+      <div className="container-custom text-white">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo only */}
           <Link href="/" className="flex items-center">
