@@ -12,16 +12,15 @@ const HeroQuoteForm = () => {
   const router = useRouter();
   const [formData, setFormData] = useState({
     postcode: "",
-    propertyAge: "",
-    thatchType: "",
-    hasFireOrWoodburner: "",
+    heatSource: "",
+    chimneySweptYearly: "",
   });
 
   const updateFormData = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const isValid = formData.postcode && formData.propertyAge && formData.thatchType && formData.hasFireOrWoodburner;
+  const isValid = formData.postcode && formData.heatSource && formData.chimneySweptYearly;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -54,50 +53,23 @@ const HeroQuoteForm = () => {
           />
         </div>
 
-        {/* Property Age */}
+        {/* Heat source */}
         <div>
-          <Label className="text-foreground font-medium text-sm">Property Age</Label>
+          <Label className="text-foreground font-medium text-sm">Heating setup</Label>
           <RadioGroup
-            value={formData.propertyAge}
-            onValueChange={(value) => updateFormData("propertyAge", value)}
-            className="grid grid-cols-2 gap-2 mt-1.5"
-          >
-            {[
-              { value: "pre-1900", label: "Pre-1900" },
-              { value: "1900-1950", label: "1900-1950" },
-              { value: "1950-2000", label: "1950-2000" },
-              { value: "post-2000", label: "Post-2000" },
-            ].map((option) => (
-              <div key={option.value}>
-                <RadioGroupItem value={option.value} id={`hero-${option.value}`} className="peer sr-only" />
-                <Label
-                  htmlFor={`hero-${option.value}`}
-                  className="flex items-center justify-center p-2.5 text-xs border rounded-lg cursor-pointer peer-data-[state=checked]:border-foreground peer-data-[state=checked]:bg-foreground peer-data-[state=checked]:text-background hover:bg-muted transition-colors"
-                >
-                  {option.label}
-                </Label>
-              </div>
-            ))}
-          </RadioGroup>
-        </div>
-
-        {/* Thatch Type */}
-        <div>
-          <Label className="text-foreground font-medium text-sm">Thatch Type</Label>
-          <RadioGroup
-            value={formData.thatchType}
-            onValueChange={(value) => updateFormData("thatchType", value)}
+            value={formData.heatSource}
+            onValueChange={(value) => updateFormData("heatSource", value)}
             className="grid grid-cols-3 gap-2 mt-1.5"
           >
             {[
-              { value: "water-reed", label: "Water Reed" },
-              { value: "wheat-reed", label: "Wheat Reed" },
-              { value: "long-straw", label: "Long Straw" },
+              { value: "woodburner", label: "Woodburner" },
+              { value: "open-fire", label: "Open fire" },
+              { value: "neither", label: "Neither" },
             ].map((option) => (
               <div key={option.value}>
-                <RadioGroupItem value={option.value} id={`hero-thatch-${option.value}`} className="peer sr-only" />
+                <RadioGroupItem value={option.value} id={`hero-heat-${option.value}`} className="peer sr-only" />
                 <Label
-                  htmlFor={`hero-thatch-${option.value}`}
+                  htmlFor={`hero-heat-${option.value}`}
                   className="flex items-center justify-center p-2.5 text-xs border rounded-lg cursor-pointer peer-data-[state=checked]:border-foreground peer-data-[state=checked]:bg-foreground peer-data-[state=checked]:text-background hover:bg-muted transition-colors text-center"
                 >
                   {option.label}
@@ -107,27 +79,27 @@ const HeroQuoteForm = () => {
           </RadioGroup>
         </div>
 
-        {/* Fire/Woodburner */}
+        {/* Chimney swept */}
         <div>
-          <Label className="text-foreground font-medium text-sm">Open fire or woodburner?</Label>
+          <Label className="text-foreground font-medium text-sm">Is the chimney swept yearly?</Label>
           <RadioGroup
-            value={formData.hasFireOrWoodburner}
-            onValueChange={(value) => updateFormData("hasFireOrWoodburner", value)}
+            value={formData.chimneySweptYearly}
+            onValueChange={(value) => updateFormData("chimneySweptYearly", value)}
             className="grid grid-cols-2 gap-2 mt-1.5"
           >
             <div>
-              <RadioGroupItem value="yes" id="hero-fire-yes" className="peer sr-only" />
+              <RadioGroupItem value="yes" id="hero-swept-yes" className="peer sr-only" />
               <Label
-                htmlFor="hero-fire-yes"
+                htmlFor="hero-swept-yes"
                 className="flex items-center justify-center p-2.5 text-xs border rounded-lg cursor-pointer peer-data-[state=checked]:border-foreground peer-data-[state=checked]:bg-foreground peer-data-[state=checked]:text-background hover:bg-muted transition-colors"
               >
                 Yes
               </Label>
             </div>
             <div>
-              <RadioGroupItem value="no" id="hero-fire-no" className="peer sr-only" />
+              <RadioGroupItem value="no" id="hero-swept-no" className="peer sr-only" />
               <Label
-                htmlFor="hero-fire-no"
+                htmlFor="hero-swept-no"
                 className="flex items-center justify-center p-2.5 text-xs border rounded-lg cursor-pointer peer-data-[state=checked]:border-foreground peer-data-[state=checked]:bg-foreground peer-data-[state=checked]:text-background hover:bg-muted transition-colors"
               >
                 No

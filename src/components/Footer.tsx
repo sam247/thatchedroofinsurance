@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 
@@ -12,13 +13,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-serif font-bold text-xl">T</span>
-              </div>
-              <div>
-                <span className="font-serif font-semibold text-lg">Thatched Roof</span>
-                <span className="text-primary-foreground/80 ml-1">Insurance</span>
+            <div className="flex items-center gap-3 mb-4">
+              <Image src="/logo.png" alt="Thatched Roof Insurance logo" width={44} height={44} className="rounded-lg" />
+              <div className="leading-tight">
+                <span className="font-serif font-semibold text-lg block">Thatched Roof</span>
+                <span className="text-primary-foreground/80 block -mt-0.5">Insurance</span>
               </div>
             </div>
             <p className="text-background/70 text-sm leading-relaxed mb-4">

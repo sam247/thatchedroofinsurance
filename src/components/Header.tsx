@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -36,13 +37,11 @@ const Header = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-serif font-bold text-xl">T</span>
-            </div>
-            <div className="hidden sm:block">
-              <span className="font-serif font-semibold text-foreground text-lg">Thatched Roof</span>
-              <span className="text-primary font-medium ml-1">Insurance</span>
+          <Link href="/" className="flex items-center gap-3">
+            <Image src="/logo.png" alt="Thatched Roof Insurance logo" width={48} height={48} className="rounded-lg" priority />
+            <div className="hidden sm:block leading-tight">
+              <span className="font-serif font-semibold text-foreground text-lg block">Thatched Roof</span>
+              <span className="text-primary font-medium block -mt-0.5">Insurance</span>
             </div>
           </Link>
 
