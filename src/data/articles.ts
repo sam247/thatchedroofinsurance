@@ -35,6 +35,28 @@ export const articles: Article[] = [
     date: "January 2025",
     readTime: "8 min read",
   },
+  {
+    slug: "thatched-roof-cost-perm2",
+    category: "Costs",
+    title: "Thatched Roof Cost Per M2: A Comprehensive UK Pricing Guide",
+    excerpt:
+      "Understand UK thatched roof costs per m2: £60–£200 depending on material, pitch, complexity, insulation, scaffolding, ridge work, and region.",
+    content: [
+      "Typical UK thatched roof installation ranges from £60–£200 per m2. Straightforward new builds often sit around £95–£115 per m2; renovations trend higher.",
+      "Baselines: a 100 m2 new thatch may cost £8.7k–£11k; renovation £10.5k–£12.5k. Insulated systems push to ~£160 per m2 (£15k–£18k for 100 m2).",
+      "Material impacts: longstraw is cheapest but shorter-lived (£4–£6/sq ft); combed wheat reed is mid-range (£6–£10/sq ft); water reed is premium (£10–£15/sq ft) with 35–40 year lifespans.",
+      "Cost composition: materials ~20–30%; labour dominates at ~50–70% due to hand work. Ridge finishing (£75–£100 per metre), scaffolding, fixings, and fireproofing add materially.",
+      "Drivers of variation: roof complexity (dormers, valleys), pitch (45–50° ideal), existing structure condition, geography/logistics, and thatcher availability/reputation.",
+      "Renovation vs new: renovations can run 20–25% higher per m2 due to prep, structural repairs, and marrying new thatch to existing layers.",
+      "Insulation/closed roof systems raise costs 40–50% but improve thermal performance and fire safety, potentially reducing insurance premiums.",
+      "Maintenance budgeting: minor upkeep £4–£8 per m2 annually; major re-ridge/re-thatch every 25–40 years often £85–£130 per m2.",
+      "Action plan: get multiple written quotes with line items (materials, ridge, scaffolding, liner/fire treatments). Include structural survey and clarify ridge work and access costs.",
+      "For insurance: document materials, pitch, insulation method, and any fire barriers/liners—these influence risk and premiums.",
+    ],
+    image: "/thatched-roof-cost-perm2.jpg",
+    date: "January 2025",
+    readTime: "7 min read",
+  },
 ];
 
 export const findArticleBySlug = (slug: string) => articles.find((article) => article.slug === slug);
