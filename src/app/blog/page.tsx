@@ -12,7 +12,7 @@ export const metadata = {
 export default function BlogIndexPage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <Header mode="light" />
       <main className="container-custom py-24">
         <div className="max-w-3xl">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">Resources</span>

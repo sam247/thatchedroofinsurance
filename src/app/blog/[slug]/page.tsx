@@ -36,7 +36,7 @@ export default function BlogPostPage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <Header mode="light" />
       <main className="container-custom py-16">
         <Link href="/blog" className="inline-flex items-center gap-2 text-primary font-semibold mb-6 hover:gap-3 transition-all">
           <ArrowLeft className="w-4 h-4" />

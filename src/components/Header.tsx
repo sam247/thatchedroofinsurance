@@ -6,8 +6,11 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Phone, Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-const Header = () => {
+type HeaderMode = "transparent" | "light";
+
+const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
@@ -32,9 +35,18 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
+  const isTransparent = mode === "transparent";
+  const textColor = isTransparent ? "text-white" : "text-foreground";
+
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 bg-transparent text-white">
-      <div className="container-custom text-white">
+    <header
+      className={cn(
+        "top-0 left-0 right-0 z-50",
+        isTransparent ? "absolute bg-transparent" : "relative bg-background border-b border-border",
+        textColor,
+      )}
+    >
+      <div className={cn("container-custom", textColor)}>
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo only */}
           <Link href="/" className="flex items-center">
@@ -54,7 +66,10 @@ const Header = () => {
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="text-white hover:text-white/80 transition-colors font-medium text-sm"
+                className={cn(
+                  "transition-colors font-medium text-sm",
+                  isTransparent ? "text-white hover:text-white/80" : "text-foreground hover:text-foreground/80",
+                )}
               >
                 {link.label}
               </button>
@@ -65,13 +80,21 @@ const Header = () => {
           <div className="flex items-center gap-4">
             <a
               href="tel:01onal234567890"
-              className="hidden md:flex items-center gap-2 text-white font-semibold"
+              className={cn(
+                "hidden md:flex items-center gap-2 font-semibold",
+                isTransparent ? "text-white" : "text-foreground",
+              )}
             >
               <Phone className="w-4 h-4" />
               <span>01onal 234 567 890</span>
             </a>
             <Link href="/quote">
-              <Button className="bg-white text-primary hover:bg-white/90 font-semibold">
+              <Button
+                className={cn(
+                  "font-semibold",
+                  isTransparent ? "bg-white text-primary hover:bg-white/90" : "bg-primary text-primary-foreground hover:bg-primary/90",
+                )}
+              >
                 Get a Quote
               </Button>
             </Link>
@@ -79,7 +102,7 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 text-white"
+              className={cn("lg:hidden p-2", isTransparent ? "text-white" : "text-foreground")}
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -89,20 +112,31 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 mt-2 rounded-xl border border-white/20 bg-black/80 text-white animate-fade-in">
+          <div
+            className={cn(
+              "lg:hidden py-4 mt-2 rounded-xl border animate-fade-in",
+              isTransparent ? "border-white/20 bg-black/80 text-white" : "border-border bg-background text-foreground",
+            )}
+          >
             <nav className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => scrollToSection(link.href)}
-                  className="text-white hover:text-white/80 transition-colors font-medium py-2 text-left"
+                  className={cn(
+                    "transition-colors font-medium py-2 text-left",
+                    isTransparent ? "text-white hover:text-white/80" : "text-foreground hover:text-foreground/80",
+                  )}
                 >
                   {link.label}
                 </button>
               ))}
               <a
                 href="tel:01234567890"
-                className="flex items-center gap-2 text-white font-semibold py-2"
+                className={cn(
+                  "flex items-center gap-2 font-semibold py-2",
+                  isTransparent ? "text-white" : "text-foreground",
+                )}
               >
                 <Phone className="w-4 h-4" />
                 <span>01234 567 890</span>
