@@ -1,0 +1,5 @@
+BACKUP/**
+.next/**
+node_modules/**
+dist/**
+
