@@ -15,8 +15,8 @@ interface FormData {
   thatchType: string;
   thatchAge: string;
   thatchCondition: string;
-  hasOpenFire: string;
-  hasWoodburner: string;
+  heatSource: string;
+  chimneySweptYearly: string;
   chimneyLined: string;
   chimneySweepFrequency: string;
   coverType: string;
