@@ -11,53 +11,29 @@ export type Article = {
 
 export const articles: Article[] = [
   {
-    slug: "essential-fire-safety-for-thatched-properties",
-    category: "Safety",
-    title: "Essential Fire Safety Tips for Thatched Property Owners",
+    slug: "thatched-roof-chimney-regulations",
+    category: "Regulations",
+    title: "Thatched Roof Chimney Regulations 2025",
     excerpt:
-      "Protect your thatched home with crucial fire prevention measures and day-to-day safety habits every owner should know.",
+      "Understand the 2025 rules for chimneys in thatched properties: 1.8m stack heights, Ecodesign stoves, insulated flues, sweeping proof, and insurer requirements.",
     content: [
-      "Thatched properties carry unique fire risks, but most incidents are preventable with the right maintenance routines.",
-      "Schedule chimney inspections and sweeping at least once a year to remove soot and creosote build-up that can ignite.",
-      "Install fire-resistant barriers and ensure any nearby trees or vegetation are trimmed back from the roof line.",
-      "Use spark arrestors on chimneys and fit smoke alarms in loft spaces or near the thatch for early detection.",
-      "Keep extinguishers and fire blankets accessible, and make sure family members know evacuation routes.",
+      "The allure of a thatched cottage is timeless, but 2025 brings tighter rules for chimneys: Ecodesign-only stoves, higher flue temperatures, and stricter insurer warranties.",
+      "Three authorities overlap: Building Regulations (Document J), Environmental legislation (Clean Air Strategy), and insurance warranties—which are often the strictest.",
+      "The 1.8 metre rule: chimney pots must terminate at least 1.8m above the thatch ridge to cool embers before they land on dry reed or straw.",
+      "Insurance is driving retrofits: short stacks may need brick extensions or tall pots to renew cover, even if Building Regulations aren’t retrospective.",
+      "Dorset Model best practice: fire barriers over rafters, micro-porous boarding, insulated rafters, safe chimney positioning, and sacrificial thatch to protect the structure.",
+      "Wood burners vs open fires: Ecodesign stoves burn hotter—twin-wall insulated liners or insulated backfill are essential to stop heat transfer through old brickwork.",
+      "Spark arrestors are now discouraged; insurers may still demand bird guards instead. Clogged arrestors increase chimney fire and CO risks.",
+      "Sweeping and proof: HETAS/NACS sweep prior to winter and mid-season for wood. Keep digital certificates; lack of proof is a common reason for claim denial.",
+      "Scottish update 2025: NBHS rollback allows compliant stoves in new builds again, but 1.8m height and insulation rules still apply.",
+      "Fuel rules: wet wood and coal are out; “Ready to Burn” (<20% moisture) protects against tar build-up and chimney fires.",
+      "Electrical safety in the thatch void: no junctions, protect wiring in conduit, and keep clear of the chimney stack.",
+      "Checklist: 1.8m height, insulated liner, Ecodesign appliance, dry fuel, bird guard, sweep certificates, CO alarms, CCTV flue checks every 3–5 years.",
+      "Bottom line: the era of casual open fires is over; high-performance stoves plus insulated flues and rigorous maintenance are essential for safe, insurable thatched homes.",
     ],
-    image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?q=80&w=1200&auto=format&fit=crop",
-    date: "December 2024",
-    readTime: "5 min read",
-  },
-  {
-    slug: "how-often-to-rethatch-your-roof",
-    category: "Maintenance",
-    title: "How Often Should You Re-thatch Your Roof?",
-    excerpt:
-      "Understand the lifespan of different thatching materials and when to plan your next re-thatching to avoid costly surprises.",
-    content: [
-      "Water reed can last 25–40 years, combed wheat reed 20–30 years, and long straw typically 15–25 years with good care.",
-      "Book inspections every few years to spot thinning ridges, loose fixings, or moss growth that can shorten lifespan.",
-      "Budget early for re-thatching to avoid emergency work; phased ridge replacements can extend overall roof life.",
-      "Maintain clear gutters and ensure good ventilation to reduce moisture build-up in the thatch layers.",
-    ],
-    image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1200&auto=format&fit=crop",
-    date: "November 2024",
-    readTime: "4 min read",
-  },
-  {
-    slug: "understanding-your-thatched-insurance-policy",
-    category: "Insurance",
-    title: "Understanding Your Thatched Property Insurance Policy",
-    excerpt:
-      "A practical guide to what’s covered, common exclusions, and how to secure the right level of protection for your home.",
-    content: [
-      "Review rebuild values regularly to keep pace with material and labour costs specific to thatched properties.",
-      "Check conditions around chimney maintenance, fire safety equipment, and heat source declarations to avoid gaps.",
-      "Document renovations and upgrades—insurers may offer better terms when safety improvements are recorded.",
-      "Ask about optional extras like home emergency cover or legal expenses to tailor the policy to your needs.",
-    ],
-    image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1200&auto=format&fit=crop",
-    date: "October 2024",
-    readTime: "6 min read",
+    image: "/thatched-roof-chimney-regulations.jpg",
+    date: "January 2025",
+    readTime: "8 min read",
   },
 ];
 

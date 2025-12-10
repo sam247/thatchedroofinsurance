@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import Header from "@/components/Header";
@@ -28,12 +29,14 @@ export default function BlogIndexPage() {
               key={article.slug}
               className="bg-card rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-all duration-300 group"
             >
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={article.image}
-                  alt={article.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    fill
+                    sizes="(min-width: 1024px) 400px, 100vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 <div className="absolute top-4 left-4">
                   <span className="bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
                     {article.category}

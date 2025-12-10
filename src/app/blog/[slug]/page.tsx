@@ -60,7 +60,7 @@ export default function BlogPostPage({ params }: Props) {
           <p className="text-muted-foreground text-lg mb-8">{article.excerpt}</p>
 
           <div className="relative w-full h-80 md:h-96 rounded-2xl overflow-hidden mb-10">
-            <Image src={article.image} alt={article.title} fill priority className="object-cover" />
+            <Image src={article.image} alt={article.title} fill priority className="object-cover" sizes="(min-width: 1024px) 960px, 100vw" />
           </div>
 
           <div className="space-y-5 text-foreground leading-relaxed text-lg">
