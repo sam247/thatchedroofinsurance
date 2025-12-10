@@ -88,12 +88,10 @@ const ClaimsProcess = () => {
 
         {/* CTA */}
         <div
-          className="relative text-center overflow-hidden rounded-2xl p-8 md:p-12 border border-primary-foreground/20"
+          className="relative text-center overflow-hidden rounded-2xl p-8 md:p-12 border border-primary-foreground/20 bg-cover bg-center"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
+              "linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('/claims-bg.jpg')",
           }}
         >
           <div className="relative text-white">
