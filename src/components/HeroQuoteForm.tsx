@@ -115,20 +115,21 @@ const HeroQuoteForm = () => {
           type="submit"
           disabled={!isValid}
           className="w-full bg-foreground hover:bg-foreground/90 text-background font-semibold py-5 mt-2"
+          aria-label={isValid ? "Submit quote form" : "Please complete all fields to submit"}
         >
           Get My Quote
-          <ArrowRight className="w-4 h-4 ml-2" />
+          <ArrowRight className="w-4 h-4 ml-2" aria-hidden="true" />
         </Button>
       </form>
 
       {/* Trust Indicators */}
-      <div className="flex items-center justify-center gap-4 mt-4 pt-4 border-t border-border text-xs text-muted-foreground">
-        <div className="flex items-center gap-1">
-          <Clock className="w-3 h-3" />
+      <div className="flex items-center justify-center gap-4 mt-4 pt-4 border-t border-border text-xs text-muted-foreground" role="list" aria-label="Trust indicators">
+        <div className="flex items-center gap-1" role="listitem">
+          <Clock className="w-3 h-3" aria-hidden="true" />
           <span>2 min</span>
         </div>
-        <div className="flex items-center gap-1">
-          <Shield className="w-3 h-3" />
+        <div className="flex items-center gap-1" role="listitem">
+          <Shield className="w-3 h-3" aria-hidden="true" />
           <span>No obligation</span>
         </div>
       </div>

@@ -62,7 +62,7 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8" aria-label="Main navigation">
             {navLinks.map((link) => (
               <button
                 key={link.href}
@@ -71,6 +71,7 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
                   "transition-colors font-medium text-sm",
                   isTransparent ? "text-white hover:text-white/80" : "text-foreground hover:text-foreground/80",
                 )}
+                aria-label={`Navigate to ${link.label}`}
               >
                 {link.label}
               </button>
@@ -80,14 +81,15 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
           {/* Right Side */}
           <div className="flex items-center gap-4">
             <a
-              href="tel:01onal234567890"
+              href="tel:01234567890"
               className={cn(
                 "hidden md:flex items-center gap-2 font-semibold",
                 isTransparent ? "text-white" : "text-foreground",
               )}
+              aria-label="Call us at 01234 567 890"
             >
-              <Phone className="w-4 h-4" />
-              <span>01onal 234 567 890</span>
+              <Phone className="w-4 h-4" aria-hidden="true" />
+              <span>01234 567 890</span>
             </a>
             <Link href="/quote">
               <Button
@@ -119,7 +121,7 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
               isTransparent ? "border-white/20 bg-black/80 text-white" : "border-border bg-background text-foreground",
             )}
           >
-            <nav className="flex flex-col gap-2">
+            <nav className="flex flex-col gap-2" aria-label="Mobile navigation">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
@@ -128,6 +130,7 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
                     "transition-colors font-medium py-2 text-left",
                     isTransparent ? "text-white hover:text-white/80" : "text-foreground hover:text-foreground/80",
                   )}
+                  aria-label={`Navigate to ${link.label}`}
                 >
                   {link.label}
                 </button>
@@ -138,8 +141,9 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
                   "flex items-center gap-2 font-semibold py-2",
                   isTransparent ? "text-white" : "text-foreground",
                 )}
+                aria-label="Call us at 01234 567 890"
               >
-                <Phone className="w-4 h-4" />
+                <Phone className="w-4 h-4" aria-hidden="true" />
                 <span>01234 567 890</span>
               </a>
             </nav>

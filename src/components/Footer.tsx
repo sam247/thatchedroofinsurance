@@ -20,17 +20,17 @@ const Footer = () => {
               Specialist insurance for thatched properties. Protecting your unique home with expert knowledge and dedicated service.
             </p>
             <div className="flex flex-col gap-2 text-sm">
-              <a href="tel:01234567890" className="flex items-center gap-2 text-background/80 hover:text-background transition-colors">
-                <Phone className="w-4 h-4" />
+              <a href="tel:01234567890" className="flex items-center gap-2 text-background/80 hover:text-background transition-colors" aria-label="Call us at 01234 567 890">
+                <Phone className="w-4 h-4" aria-hidden="true" />
                 01234 567 890
               </a>
-              <a href="mailto:info@thatchedroofinsurance.co.uk" className="flex items-center gap-2 text-background/80 hover:text-background transition-colors">
-                <Mail className="w-4 h-4" />
+              <a href="mailto:info@thatchedroofinsurance.co.uk" className="flex items-center gap-2 text-background/80 hover:text-background transition-colors" aria-label="Email us at info@thatchedroofinsurance.co.uk">
+                <Mail className="w-4 h-4" aria-hidden="true" />
                 info@thatchedroofinsurance.co.uk
               </a>
               <div className="flex items-start gap-2 text-background/80">
-                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>123 Insurance House, Cotswold Way, Gloucestershire GL1 2AB</span>
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                <address className="not-italic">123 Insurance House, Cotswold Way, Gloucestershire GL1 2AB</address>
               </div>
             </div>
           </div>

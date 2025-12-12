@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
         <TrustBar />
         <WhyChooseUs />

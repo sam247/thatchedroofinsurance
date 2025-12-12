@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { articles } from "@/data/articles";
 
@@ -26,12 +27,14 @@ const ArticlesSection = () => {
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
-                <img
+                <Image
                   src={article.image}
                   alt={article.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-4 left-4">
+                <div className="absolute top-4 left-4 z-10">
                   <span className="bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
                     {article.category}
                   </span>
