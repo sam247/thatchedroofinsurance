@@ -597,50 +597,21 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
               </Select>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {(formData.coverType === "buildings-contents" || formData.coverType === "contents-only") && (
-                <div>
-                  <Label htmlFor="contentsValue" className="text-foreground font-medium text-sm mb-2 block">
-                    Estimated Contents Value (£)
-                  </Label>
-                  <Input
-                    id="contentsValue"
-                    type="number"
-                    placeholder="e.g., 50000"
-                    value={formData.contentsValue}
-                    onChange={(e) => updateFormData("contentsValue", e.target.value)}
-                    className="h-9"
-                  />
-                </div>
-              )}
-
-              <div className={formData.coverType === "buildings-only" ? "md:col-span-2" : ""}>
-                <Label className="text-foreground font-medium text-sm mb-2 block">Optional Extras</Label>
-                <p className="text-xs text-muted-foreground mb-2">Select any additional cover you'd like to include.</p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {optionalExtras.map((extra) => (
-                    <div
-                      key={extra.value}
-                      className={`flex items-center space-x-2 p-2 border rounded-lg cursor-pointer transition-colors ${
-                        formData.optionalExtras.includes(extra.value)
-                          ? "border-primary bg-primary/5"
-                          : "hover:bg-muted"
-                      }`}
-                      onClick={() => toggleExtra(extra.value)}
-                    >
-                      <Checkbox
-                        id={extra.value}
-                        checked={formData.optionalExtras.includes(extra.value)}
-                        onCheckedChange={() => toggleExtra(extra.value)}
-                      />
-                      <Label htmlFor={extra.value} className="cursor-pointer text-xs">
-                        {extra.label}
-                      </Label>
-                    </div>
-                  ))}
-                </div>
+            {(formData.coverType === "buildings-contents" || formData.coverType === "contents-only") && (
+              <div>
+                <Label htmlFor="contentsValue" className="text-foreground font-medium text-sm mb-2 block">
+                  Estimated Contents Value (£)
+                </Label>
+                <Input
+                  id="contentsValue"
+                  type="number"
+                  placeholder="e.g., 50000"
+                  value={formData.contentsValue}
+                  onChange={(e) => updateFormData("contentsValue", e.target.value)}
+                  className="h-9"
+                />
               </div>
-            </div>
+            )}
           </div>
         </div>
       )}
@@ -687,28 +658,6 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
                 onChange={(e) => updateFormData("phone", e.target.value)}
                 className="h-9"
               />
-            </div>
-
-            <div>
-              <Label className="text-foreground font-medium text-sm mb-2 block">Preferred Contact Method</Label>
-              <RadioGroup
-                value={formData.preferredContact}
-                onValueChange={(value) => updateFormData("preferredContact", value)}
-                className="flex flex-col gap-2"
-              >
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="email" id="contact-email" />
-                  <Label htmlFor="contact-email" className="text-sm cursor-pointer">Email</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="phone" id="contact-phone" />
-                  <Label htmlFor="contact-phone" className="text-sm cursor-pointer">Phone</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="either" id="contact-either" />
-                  <Label htmlFor="contact-either" className="text-sm cursor-pointer">Either</Label>
-                </div>
-              </RadioGroup>
             </div>
           </div>
 
