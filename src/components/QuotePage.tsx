@@ -55,7 +55,7 @@ const QuotePage = () => {
           </div>
 
           <div className="max-w-3xl mx-auto">
-            <div className="bg-background rounded-2xl shadow-xl border border-border p-4 md:p-6 max-h-[calc(100vh-240px)] overflow-y-auto">
+            <div className="bg-background rounded-2xl shadow-xl border border-border p-4 md:p-6">
               {quoteComplete && quoteData ? (
                 <QuoteSummary quote={quoteData.quote} formData={quoteData.formData} />
               ) : (

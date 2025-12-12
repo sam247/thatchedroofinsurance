@@ -247,66 +247,83 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
 
       {/* Step 1: Property Basics */}
       {step === 1 && (
-        <div className="space-y-5 animate-fade-in">
+        <div className="space-y-4 animate-fade-in">
           <div>
-            <h3 className="font-serif text-lg font-semibold text-foreground mb-0.5">Property Basics</h3>
+            <h3 className="font-serif text-base font-semibold text-foreground mb-0.5">Property Basics</h3>
             <p className="text-xs text-muted-foreground">Tell us about your thatched property.</p>
           </div>
 
-          <div className="space-y-4 border-t border-border pt-4">
+          <div className="space-y-3 border-t border-border pt-3">
             <div>
               <Label className="text-foreground font-medium text-sm mb-2 block">Property Age</Label>
-              <RadioGroup
-                value={formData.propertyAge}
-                onValueChange={(value) => updateFormData("propertyAge", value)}
-                className="grid grid-cols-2 gap-2"
-              >
-                {propertyAgeOptions.map((option) => (
-                  <div key={option.value}>
-                    <RadioGroupItem
-                      value={option.value}
-                      id={option.value}
-                      className="peer sr-only"
-                    />
-                    <Label
-                      htmlFor={option.value}
-                      className="flex items-center justify-center p-2.5 border-2 rounded-lg cursor-pointer text-sm peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/5 hover:bg-muted transition-colors"
-                    >
-                      {option.label}
-                    </Label>
-                  </div>
-                ))}
-              </RadioGroup>
+              {initialStep === 1 ? (
+                <Select value={formData.propertyAge} onValueChange={(value) => updateFormData("propertyAge", value)}>
+                  <SelectTrigger className="h-9">
+                    <SelectValue placeholder="Select property age" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {propertyAgeOptions.map((option) => (
+                      <SelectItem key={option.value} value={option.value}>
+                        {option.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              ) : (
+                <RadioGroup
+                  value={formData.propertyAge}
+                  onValueChange={(value) => updateFormData("propertyAge", value)}
+                  className="grid grid-cols-2 gap-2"
+                >
+                  {propertyAgeOptions.map((option) => (
+                    <div key={option.value}>
+                      <RadioGroupItem
+                        value={option.value}
+                        id={option.value}
+                        className="peer sr-only"
+                      />
+                      <Label
+                        htmlFor={option.value}
+                        className="flex items-center justify-center p-2.5 border-2 rounded-lg cursor-pointer text-sm peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/5 hover:bg-muted transition-colors"
+                      >
+                        {option.label}
+                      </Label>
+                    </div>
+                  ))}
+                </RadioGroup>
+              )}
             </div>
 
-            <div className="border-t border-border pt-4">
-              <Label htmlFor="rebuildValue" className="text-foreground font-medium text-sm mb-2 block">
-                Estimated Rebuild Value (£)
-              </Label>
-              <Input
-                id="rebuildValue"
-                type="number"
-                placeholder="e.g., 450000"
-                value={formData.rebuildValue}
-                onChange={(e) => updateFormData("rebuildValue", e.target.value)}
-                className="h-9"
-              />
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 border-t border-border pt-3">
+              <div>
+                <Label htmlFor="rebuildValue" className="text-foreground font-medium text-sm mb-2 block">
+                  Estimated Rebuild Value (£)
+                </Label>
+                <Input
+                  id="rebuildValue"
+                  type="number"
+                  placeholder="e.g., 450000"
+                  value={formData.rebuildValue}
+                  onChange={(e) => updateFormData("rebuildValue", e.target.value)}
+                  className="h-9"
+                />
+              </div>
 
-            <div className="border-t border-border pt-4">
-              <Label htmlFor="postcode" className="text-foreground font-medium text-sm mb-2 block">
-                Property Postcode
-                {formData.postcode && initialStep === 2 && (
-                  <span className="ml-2 text-xs text-primary">(pre-filled)</span>
-                )}
-              </Label>
-              <Input
-                id="postcode"
-                placeholder="e.g., GL1 2AB"
-                value={formData.postcode}
-                onChange={(e) => updateFormData("postcode", e.target.value.toUpperCase())}
-                className="h-9"
-              />
+              <div>
+                <Label htmlFor="postcode" className="text-foreground font-medium text-sm mb-2 block">
+                  Property Postcode
+                  {formData.postcode && initialStep === 2 && (
+                    <span className="ml-2 text-xs text-primary">(pre-filled)</span>
+                  )}
+                </Label>
+                <Input
+                  id="postcode"
+                  placeholder="e.g., GL1 2AB"
+                  value={formData.postcode}
+                  onChange={(e) => updateFormData("postcode", e.target.value.toUpperCase())}
+                  className="h-9"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -316,8 +333,8 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
       {step === 2 && (
         <div className="space-y-4 animate-fade-in">
           <div>
-            <h3 className="font-serif text-xl font-semibold text-foreground mb-1">Property Type</h3>
-            <p className="text-sm text-muted-foreground">What type of property is it?</p>
+            <h3 className="font-serif text-base font-semibold text-foreground mb-1">Property Type</h3>
+            <p className="text-xs text-muted-foreground">What type of property is it?</p>
           </div>
 
           <div className="space-y-3">
@@ -350,11 +367,11 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
       {step === 3 && (
         <div className="space-y-4 animate-fade-in">
           <div>
-            <h3 className="font-serif text-xl font-semibold text-foreground mb-1">Thatch Details</h3>
-            <p className="text-sm text-muted-foreground">Information about your thatched roof.</p>
+            <h3 className="font-serif text-base font-semibold text-foreground mb-1">Thatch Details</h3>
+            <p className="text-xs text-muted-foreground">Information about your thatched roof.</p>
           </div>
 
-          <div className="space-y-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
               <Label className="text-foreground font-medium text-sm mb-2 block">Type of Thatch</Label>
               <Select value={formData.thatchType} onValueChange={(value) => updateFormData("thatchType", value)}>
@@ -395,8 +412,8 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
       {step === 4 && (
         <div className="space-y-4 animate-fade-in">
           <div>
-            <h3 className="font-serif text-xl font-semibold text-foreground mb-1">Thatch Condition</h3>
-            <p className="text-sm text-muted-foreground">How would you describe the condition of your thatch?</p>
+            <h3 className="font-serif text-base font-semibold text-foreground mb-1">Thatch Condition</h3>
+            <p className="text-xs text-muted-foreground">How would you describe the condition of your thatch?</p>
           </div>
 
           <div className="space-y-3">
@@ -433,8 +450,8 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
       {step === 5 && (
         <div className="space-y-4 animate-fade-in">
           <div>
-            <h3 className="font-serif text-xl font-semibold text-foreground mb-1">Heating Setup</h3>
-            <p className="text-sm text-muted-foreground">Important fire safety information.</p>
+            <h3 className="font-serif text-base font-semibold text-foreground mb-1">Heating Setup</h3>
+            <p className="text-xs text-muted-foreground">Important fire safety information.</p>
             {initialStep === 2 && (formData.heatSource || formData.chimneySweptYearly) && (
               <p className="text-xs text-primary mt-1">✓ Some details pre-filled from quick quote</p>
             )}
@@ -546,8 +563,8 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
       {step === 6 && (
         <div className="space-y-4 animate-fade-in">
           <div>
-            <h3 className="font-serif text-xl font-semibold text-foreground mb-1">Cover Requirements</h3>
-            <p className="text-sm text-muted-foreground">Choose the protection you need.</p>
+            <h3 className="font-serif text-base font-semibold text-foreground mb-1">Cover Requirements</h3>
+            <p className="text-xs text-muted-foreground">Choose the protection you need.</p>
           </div>
 
           <div className="space-y-3">
@@ -632,64 +649,64 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
       {step === 7 && (
         <div className="space-y-4 animate-fade-in">
           <div>
-            <h3 className="font-serif text-xl font-semibold text-foreground mb-1">Your Details</h3>
-            <p className="text-sm text-muted-foreground">How can we get in touch with you?</p>
+            <h3 className="font-serif text-base font-semibold text-foreground mb-1">Your Details</h3>
+            <p className="text-xs text-muted-foreground">How can we get in touch with you?</p>
           </div>
 
-          <div className="space-y-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
-              <Label htmlFor="name" className="text-foreground font-medium text-sm">Full Name</Label>
+              <Label htmlFor="name" className="text-foreground font-medium text-sm mb-2 block">Full Name</Label>
               <Input
                 id="name"
                 placeholder="e.g., John Smith"
                 value={formData.name}
                 onChange={(e) => updateFormData("name", e.target.value)}
-                className="mt-1.5 h-10"
+                className="h-9"
               />
             </div>
 
             <div>
-              <Label htmlFor="email" className="text-foreground font-medium text-sm">Email Address</Label>
+              <Label htmlFor="email" className="text-foreground font-medium text-sm mb-2 block">Email Address</Label>
               <Input
                 id="email"
                 type="email"
                 placeholder="e.g., john@example.com"
                 value={formData.email}
                 onChange={(e) => updateFormData("email", e.target.value)}
-                className="mt-1.5 h-10"
+                className="h-9"
               />
             </div>
 
             <div>
-              <Label htmlFor="phone" className="text-foreground font-medium text-sm">Phone Number</Label>
+              <Label htmlFor="phone" className="text-foreground font-medium text-sm mb-2 block">Phone Number</Label>
               <Input
                 id="phone"
                 type="tel"
                 placeholder="e.g., 07700 123456"
                 value={formData.phone}
                 onChange={(e) => updateFormData("phone", e.target.value)}
-                className="mt-1.5 h-10"
+                className="h-9"
               />
             </div>
 
             <div>
-              <Label className="text-foreground font-medium text-sm">Preferred Contact Method</Label>
+              <Label className="text-foreground font-medium text-sm mb-2 block">Preferred Contact Method</Label>
               <RadioGroup
                 value={formData.preferredContact}
                 onValueChange={(value) => updateFormData("preferredContact", value)}
-                className="flex gap-4 mt-1.5"
+                className="flex flex-col gap-2"
               >
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="email" id="contact-email" />
-                  <Label htmlFor="contact-email" className="text-sm">Email</Label>
+                  <Label htmlFor="contact-email" className="text-sm cursor-pointer">Email</Label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="phone" id="contact-phone" />
-                  <Label htmlFor="contact-phone" className="text-sm">Phone</Label>
+                  <Label htmlFor="contact-phone" className="text-sm cursor-pointer">Phone</Label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="either" id="contact-either" />
-                  <Label htmlFor="contact-either" className="text-sm">Either</Label>
+                  <Label htmlFor="contact-either" className="text-sm cursor-pointer">Either</Label>
                 </div>
               </RadioGroup>
             </div>
