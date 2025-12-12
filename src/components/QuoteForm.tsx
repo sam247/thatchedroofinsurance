@@ -6,6 +6,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { ArrowRight, ArrowLeft, CheckCircle } from "lucide-react";
 
 interface FormData {
@@ -349,33 +356,26 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
 
           <div className="space-y-3">
             <div>
-              <Label className="text-foreground font-medium text-sm">Type of Thatch</Label>
-              <RadioGroup
-                value={formData.thatchType}
-                onValueChange={(value) => updateFormData("thatchType", value)}
-                className="space-y-2 mt-1.5"
-              >
-                {thatchTypes.map((type) => (
-                  <div key={type.value}>
-                    <RadioGroupItem
-                      value={type.value}
-                      id={type.value}
-                      className="peer sr-only"
-                    />
-                    <Label
-                      htmlFor={type.value}
-                      className="flex flex-col p-3 border-2 rounded-lg cursor-pointer peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/5 hover:bg-muted transition-colors"
-                    >
-                      <span className="font-semibold text-sm">{type.label}</span>
-                      <span className="text-xs text-muted-foreground">{type.description}</span>
-                    </Label>
-                  </div>
-                ))}
-              </RadioGroup>
+              <Label className="text-foreground font-medium text-sm mb-2 block">Type of Thatch</Label>
+              <Select value={formData.thatchType} onValueChange={(value) => updateFormData("thatchType", value)}>
+                <SelectTrigger className="h-9">
+                  <SelectValue placeholder="Select thatch type" />
+                </SelectTrigger>
+                <SelectContent>
+                  {thatchTypes.map((type) => (
+                    <SelectItem key={type.value} value={type.value}>
+                      <div className="flex flex-col">
+                        <span className="font-semibold">{type.label}</span>
+                        <span className="text-xs text-muted-foreground">{type.description}</span>
+                      </div>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
 
             <div>
-              <Label htmlFor="thatchAge" className="text-foreground font-medium text-sm">
+              <Label htmlFor="thatchAge" className="text-foreground font-medium text-sm mb-2 block">
                 Approximate Age of Current Thatch (years)
               </Label>
               <Input
@@ -384,7 +384,7 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
                 placeholder="e.g., 10"
                 value={formData.thatchAge}
                 onChange={(e) => updateFormData("thatchAge", e.target.value)}
-                className="mt-1.5 h-10"
+                className="h-9"
               />
             </div>
           </div>
@@ -441,100 +441,102 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
           </div>
 
           <div className="space-y-3">
-            <div>
-              <Label className="text-foreground font-medium text-sm">
-                Heating setup
-                {formData.heatSource && initialStep === 2 && (
-                  <span className="ml-2 text-xs text-primary">(pre-filled)</span>
-                )}
-              </Label>
-              <RadioGroup
-                value={formData.heatSource}
-                onValueChange={(value) => updateFormData("heatSource", value)}
-                className="flex flex-wrap gap-3 mt-1.5"
-              >
-                {[
-                  { value: "woodburner", label: "Woodburner" },
-                  { value: "open-fire", label: "Open fire" },
-                  { value: "neither", label: "Neither" },
-                ].map((option) => (
-                  <div key={option.value} className="flex items-center space-x-2">
-                    <RadioGroupItem value={option.value} id={`heat-${option.value}`} />
-                    <Label htmlFor={`heat-${option.value}`} className="text-sm">{option.label}</Label>
-                  </div>
-                ))}
-              </RadioGroup>
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div>
+                <Label className="text-foreground font-medium text-sm mb-2 block">
+                  Heating setup
+                  {formData.heatSource && initialStep === 2 && (
+                    <span className="ml-2 text-xs text-primary">(pre-filled)</span>
+                  )}
+                </Label>
+                <RadioGroup
+                  value={formData.heatSource}
+                  onValueChange={(value) => updateFormData("heatSource", value)}
+                  className="flex flex-col gap-2"
+                >
+                  {[
+                    { value: "woodburner", label: "Woodburner" },
+                    { value: "open-fire", label: "Open fire" },
+                    { value: "neither", label: "Neither" },
+                  ].map((option) => (
+                    <div key={option.value} className="flex items-center space-x-2">
+                      <RadioGroupItem value={option.value} id={`heat-${option.value}`} />
+                      <Label htmlFor={`heat-${option.value}`} className="text-sm cursor-pointer">{option.label}</Label>
+                    </div>
+                  ))}
+                </RadioGroup>
+              </div>
 
-            <div>
-              <Label className="text-foreground font-medium text-sm">
-                Is the chimney swept yearly?
-                {formData.chimneySweptYearly && initialStep === 2 && (
-                  <span className="ml-2 text-xs text-primary">(pre-filled)</span>
-                )}
-              </Label>
-              <RadioGroup
-                value={formData.chimneySweptYearly}
-                onValueChange={(value) => updateFormData("chimneySweptYearly", value)}
-                className="flex gap-4 mt-1.5"
-              >
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="yes" id="swept-yes" />
-                  <Label htmlFor="swept-yes" className="text-sm">Yes</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="no" id="swept-no" />
-                  <Label htmlFor="swept-no" className="text-sm">No</Label>
-                </div>
-              </RadioGroup>
+              <div>
+                <Label className="text-foreground font-medium text-sm mb-2 block">
+                  Is the chimney swept yearly?
+                  {formData.chimneySweptYearly && initialStep === 2 && (
+                    <span className="ml-2 text-xs text-primary">(pre-filled)</span>
+                  )}
+                </Label>
+                <RadioGroup
+                  value={formData.chimneySweptYearly}
+                  onValueChange={(value) => updateFormData("chimneySweptYearly", value)}
+                  className="flex flex-col gap-2"
+                >
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="yes" id="swept-yes" />
+                    <Label htmlFor="swept-yes" className="text-sm cursor-pointer">Yes</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="no" id="swept-no" />
+                    <Label htmlFor="swept-no" className="text-sm cursor-pointer">No</Label>
+                  </div>
+                </RadioGroup>
+              </div>
             </div>
 
             {formData.heatSource !== "neither" && formData.heatSource !== "" && (
-              <>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-3 border-t border-border">
                 <div>
-                  <Label className="text-foreground font-medium text-sm">Is your chimney lined?</Label>
+                  <Label className="text-foreground font-medium text-sm mb-2 block">Is your chimney lined?</Label>
                   <RadioGroup
                     value={formData.chimneyLined}
                     onValueChange={(value) => updateFormData("chimneyLined", value)}
-                    className="flex gap-4 mt-1.5"
+                    className="flex flex-col gap-2"
                   >
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="yes" id="lined-yes" />
-                      <Label htmlFor="lined-yes" className="text-sm">Yes</Label>
+                      <Label htmlFor="lined-yes" className="text-sm cursor-pointer">Yes</Label>
                     </div>
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="no" id="lined-no" />
-                      <Label htmlFor="lined-no" className="text-sm">No</Label>
+                      <Label htmlFor="lined-no" className="text-sm cursor-pointer">No</Label>
                     </div>
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="unsure" id="lined-unsure" />
-                      <Label htmlFor="lined-unsure" className="text-sm">Not Sure</Label>
+                      <Label htmlFor="lined-unsure" className="text-sm cursor-pointer">Not Sure</Label>
                     </div>
                   </RadioGroup>
                 </div>
 
                 <div>
-                  <Label className="text-foreground font-medium text-sm">How often is your chimney swept?</Label>
+                  <Label className="text-foreground font-medium text-sm mb-2 block">How often is your chimney swept?</Label>
                   <RadioGroup
                     value={formData.chimneySweepFrequency}
                     onValueChange={(value) => updateFormData("chimneySweepFrequency", value)}
-                    className="flex flex-wrap gap-4 mt-1.5"
+                    className="flex flex-col gap-2"
                   >
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="twice-yearly" id="twice" />
-                      <Label htmlFor="twice" className="text-sm">Twice a year</Label>
+                      <Label htmlFor="twice" className="text-sm cursor-pointer">Twice a year</Label>
                     </div>
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="annually" id="annually" />
-                      <Label htmlFor="annually" className="text-sm">Annually</Label>
+                      <Label htmlFor="annually" className="text-sm cursor-pointer">Annually</Label>
                     </div>
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="less-often" id="less" />
-                      <Label htmlFor="less" className="text-sm">Less often</Label>
+                      <Label htmlFor="less" className="text-sm cursor-pointer">Less often</Label>
                     </div>
                   </RadioGroup>
                 </div>
-              </>
+              </div>
             )}
           </div>
         </div>
@@ -550,85 +552,76 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
 
           <div className="space-y-3">
             <div>
-              <Label className="text-foreground font-medium text-sm">Type of Cover</Label>
-              <RadioGroup
-                value={formData.coverType}
-                onValueChange={(value) => updateFormData("coverType", value)}
-                className="space-y-2 mt-1.5"
-              >
-                <div>
-                  <RadioGroupItem value="buildings-contents" id="both" className="peer sr-only" />
-                  <Label
-                    htmlFor="both"
-                    className="flex flex-col p-3 border-2 rounded-lg cursor-pointer peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/5 hover:bg-muted transition-colors"
-                  >
-                    <span className="font-semibold text-sm">Buildings & Contents</span>
-                    <span className="text-xs text-muted-foreground">Complete protection for your property and belongings</span>
-                  </Label>
-                </div>
-                <div>
-                  <RadioGroupItem value="buildings-only" id="buildings" className="peer sr-only" />
-                  <Label
-                    htmlFor="buildings"
-                    className="flex flex-col p-3 border-2 rounded-lg cursor-pointer peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/5 hover:bg-muted transition-colors"
-                  >
-                    <span className="font-semibold text-sm">Buildings Only</span>
-                    <span className="text-xs text-muted-foreground">Cover for the structure and permanent fixtures</span>
-                  </Label>
-                </div>
-                <div>
-                  <RadioGroupItem value="contents-only" id="contents" className="peer sr-only" />
-                  <Label
-                    htmlFor="contents"
-                    className="flex flex-col p-3 border-2 rounded-lg cursor-pointer peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/5 hover:bg-muted transition-colors"
-                  >
-                    <span className="font-semibold text-sm">Contents Only</span>
-                    <span className="text-xs text-muted-foreground">Protection for your belongings only</span>
-                  </Label>
-                </div>
-              </RadioGroup>
+              <Label className="text-foreground font-medium text-sm mb-2 block">Type of Cover</Label>
+              <Select value={formData.coverType} onValueChange={(value) => updateFormData("coverType", value)}>
+                <SelectTrigger className="h-9">
+                  <SelectValue placeholder="Select cover type" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="buildings-contents">
+                    <div className="flex flex-col">
+                      <span className="font-semibold">Buildings & Contents</span>
+                      <span className="text-xs text-muted-foreground">Complete protection for your property and belongings</span>
+                    </div>
+                  </SelectItem>
+                  <SelectItem value="buildings-only">
+                    <div className="flex flex-col">
+                      <span className="font-semibold">Buildings Only</span>
+                      <span className="text-xs text-muted-foreground">Cover for the structure and permanent fixtures</span>
+                    </div>
+                  </SelectItem>
+                  <SelectItem value="contents-only">
+                    <div className="flex flex-col">
+                      <span className="font-semibold">Contents Only</span>
+                      <span className="text-xs text-muted-foreground">Protection for your belongings only</span>
+                    </div>
+                  </SelectItem>
+                </SelectContent>
+              </Select>
             </div>
 
-            {(formData.coverType === "buildings-contents" || formData.coverType === "contents-only") && (
-              <div>
-                <Label htmlFor="contentsValue" className="text-foreground font-medium text-sm">
-                  Estimated Contents Value (£)
-                </Label>
-                <Input
-                  id="contentsValue"
-                  type="number"
-                  placeholder="e.g., 50000"
-                  value={formData.contentsValue}
-                  onChange={(e) => updateFormData("contentsValue", e.target.value)}
-                  className="mt-1.5 h-10"
-                />
-              </div>
-            )}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {(formData.coverType === "buildings-contents" || formData.coverType === "contents-only") && (
+                <div>
+                  <Label htmlFor="contentsValue" className="text-foreground font-medium text-sm mb-2 block">
+                    Estimated Contents Value (£)
+                  </Label>
+                  <Input
+                    id="contentsValue"
+                    type="number"
+                    placeholder="e.g., 50000"
+                    value={formData.contentsValue}
+                    onChange={(e) => updateFormData("contentsValue", e.target.value)}
+                    className="h-9"
+                  />
+                </div>
+              )}
 
-            <div>
-              <Label className="text-foreground font-medium text-sm">Optional Extras</Label>
-              <p className="text-xs text-muted-foreground mb-2">Select any additional cover you'd like to include.</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {optionalExtras.map((extra) => (
-                  <div
-                    key={extra.value}
-                    className={`flex items-center space-x-2 p-2 border rounded-lg cursor-pointer transition-colors ${
-                      formData.optionalExtras.includes(extra.value)
-                        ? "border-primary bg-primary/5"
-                        : "hover:bg-muted"
-                    }`}
-                    onClick={() => toggleExtra(extra.value)}
-                  >
-                    <Checkbox
-                      id={extra.value}
-                      checked={formData.optionalExtras.includes(extra.value)}
-                      onCheckedChange={() => toggleExtra(extra.value)}
-                    />
-                    <Label htmlFor={extra.value} className="cursor-pointer text-xs">
-                      {extra.label}
-                    </Label>
-                  </div>
-                ))}
+              <div className={formData.coverType === "buildings-only" ? "md:col-span-2" : ""}>
+                <Label className="text-foreground font-medium text-sm mb-2 block">Optional Extras</Label>
+                <p className="text-xs text-muted-foreground mb-2">Select any additional cover you'd like to include.</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {optionalExtras.map((extra) => (
+                    <div
+                      key={extra.value}
+                      className={`flex items-center space-x-2 p-2 border rounded-lg cursor-pointer transition-colors ${
+                        formData.optionalExtras.includes(extra.value)
+                          ? "border-primary bg-primary/5"
+                          : "hover:bg-muted"
+                      }`}
+                      onClick={() => toggleExtra(extra.value)}
+                    >
+                      <Checkbox
+                        id={extra.value}
+                        checked={formData.optionalExtras.includes(extra.value)}
+                        onCheckedChange={() => toggleExtra(extra.value)}
+                      />
+                      <Label htmlFor={extra.value} className="cursor-pointer text-xs">
+                        {extra.label}
+                      </Label>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
