@@ -4,7 +4,21 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Terms of Service | Thatched Roof Insurance",
-  description: "Terms and conditions for using Thatched Roof Insurance services.",
+  description:
+    "Read the terms and conditions for using Thatched Roof Insurance services. Understand your rights and obligations when requesting quotes and purchasing insurance.",
+  openGraph: {
+    title: "Terms of Service | Thatched Roof Insurance",
+    description:
+      "Read the terms and conditions for using Thatched Roof Insurance services. Understand your rights and obligations when requesting quotes and purchasing insurance.",
+    url: "https://thatchedroofinsurance.co.uk/terms-of-service",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Terms of Service | Thatched Roof Insurance",
+    description:
+      "Read the terms and conditions for using Thatched Roof Insurance services. Understand your rights and obligations when requesting quotes and purchasing insurance.",
+  },
 };
 
 export default function TermsOfServicePage() {

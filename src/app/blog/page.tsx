@@ -5,9 +5,25 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { articles } from "@/data/articles";
 
-export const metadata = {
-  title: "Blog | Thatched Roof Insurance",
-  description: "Guides, tips, and insights for protecting and maintaining thatched properties.",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog | Thatched Roof Insurance Guides & Tips",
+  description:
+    "Expert guides and tips for protecting and maintaining thatched properties. Learn about chimney regulations, costs, maintenance, and insurance requirements.",
+  openGraph: {
+    title: "Blog | Thatched Roof Insurance Guides & Tips",
+    description:
+      "Expert guides and tips for protecting and maintaining thatched properties. Learn about chimney regulations, costs, maintenance, and insurance requirements.",
+    url: "https://thatchedroofinsurance.co.uk/blog",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog | Thatched Roof Insurance Guides & Tips",
+    description:
+      "Expert guides and tips for protecting and maintaining thatched properties. Learn about chimney regulations, costs, maintenance, and insurance requirements.",
+  },
 };
 
 export default function BlogIndexPage() {

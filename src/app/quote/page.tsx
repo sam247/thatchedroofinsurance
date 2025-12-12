@@ -2,9 +2,22 @@ import type { Metadata } from "next";
 import QuotePage from "@/components/QuotePage";
 
 export const metadata: Metadata = {
-  title: "Get an Indicative Quote | Thatched Roof Insurance",
+  title: "Get a Quote | Thatched Roof Insurance",
   description:
-    "Answer a few questions about your thatched property to receive an indicative quote with no obligation and a specialist callback.",
+    "Get your indicative thatched roof insurance quote in minutes. Answer a few questions about your property for a no-obligation quote and specialist callback.",
+  openGraph: {
+    title: "Get a Quote | Thatched Roof Insurance",
+    description:
+      "Get your indicative thatched roof insurance quote in minutes. Answer a few questions about your property for a no-obligation quote and specialist callback.",
+    url: "https://thatchedroofinsurance.co.uk/quote",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Get a Quote | Thatched Roof Insurance",
+    description:
+      "Get your indicative thatched roof insurance quote in minutes. Answer a few questions about your property for a no-obligation quote and specialist callback.",
+  },
 };
 
 export default function QuoteRoute() {

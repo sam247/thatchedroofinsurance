@@ -16,9 +16,9 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const siteTitle = "Thatched Roof Insurance | Specialists in Thatched Property Cover";
+const siteTitle = "Thatched Roof Insurance | UK Specialist Cover";
 const siteDescription =
-  "Specialist insurance for thatched properties with tailored cover, expert guidance, and quick indicative quotes.";
+  "Specialist thatched roof insurance for UK properties. Expert cover, quick quotes, and compliance with 2025 chimney regulations. Get your quote today.";
 
 export const metadata: Metadata = {
   title: siteTitle,
@@ -31,13 +31,26 @@ export const metadata: Metadata = {
     "specialist home insurance",
   ],
   openGraph: {
+    type: "website",
+    locale: "en_GB",
+    url: "https://thatchedroofinsurance.co.uk",
+    siteName: "Thatched Roof Insurance",
     title: siteTitle,
     description: siteDescription,
+    images: [
+      {
+        url: "https://thatchedroofinsurance.co.uk/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Thatched Roof Insurance",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteTitle,
     description: siteDescription,
+    images: ["https://thatchedroofinsurance.co.uk/logo.png"],
   },
 };
 

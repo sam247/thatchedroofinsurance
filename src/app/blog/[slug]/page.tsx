@@ -15,13 +15,34 @@ export function generateMetadata({ params }: Props): Metadata {
   const article = findArticleBySlug(params.slug);
   if (!article) return { title: "Article not found" };
 
+  const title = `${article.title} | Thatched Roof Insurance`;
+  const imageUrl = article.image.startsWith("http") 
+    ? article.image 
+    : `https://thatchedroofinsurance.co.uk${article.image}`;
+
   return {
-    title: `${article.title} | Thatched Roof Insurance`,
+    title,
     description: article.excerpt,
     openGraph: {
       title: article.title,
       description: article.excerpt,
-      images: [{ url: article.image }],
+      url: `https://thatchedroofinsurance.co.uk/blog/${params.slug}`,
+      type: "article",
+      publishedTime: article.date,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.excerpt,
+      images: [imageUrl],
     },
   };
 }

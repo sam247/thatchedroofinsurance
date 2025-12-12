@@ -4,7 +4,21 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Thatched Roof Insurance",
-  description: "Our privacy policy explains how we collect, use, and protect your personal information.",
+  description:
+    "Read our privacy policy to understand how Thatched Roof Insurance collects, uses, and protects your personal information in compliance with UK data protection laws.",
+  openGraph: {
+    title: "Privacy Policy | Thatched Roof Insurance",
+    description:
+      "Read our privacy policy to understand how Thatched Roof Insurance collects, uses, and protects your personal information in compliance with UK data protection laws.",
+    url: "https://thatchedroofinsurance.co.uk/privacy-policy",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Privacy Policy | Thatched Roof Insurance",
+    description:
+      "Read our privacy policy to understand how Thatched Roof Insurance collects, uses, and protects your personal information in compliance with UK data protection laws.",
+  },
 };
 
 export default function PrivacyPolicyPage() {

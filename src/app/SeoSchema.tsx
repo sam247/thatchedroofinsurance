@@ -4,25 +4,55 @@ export const SeoSchema = () => {
   const data = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://thatchedroofinsurance.co.uk/#organization",
     name: "Thatched Roof Insurance",
-    url: "https://thatchedroofinsurance.vercel.app",
-    image: "https://thatchedroofinsurance.vercel.app/logo.png",
+    url: "https://thatchedroofinsurance.co.uk",
+    logo: "https://thatchedroofinsurance.co.uk/logo.png",
+    image: "https://thatchedroofinsurance.co.uk/logo.png",
     description: "Specialist thatched roof insurance covering the UK with compliance to 2025 chimney and fire safety requirements.",
     telephone: "+44-1234-567-890",
+    email: "info@thatchedroofinsurance.co.uk",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "123 Insurance House",
-      addressLocality: "Cotswolds",
-      addressRegion: "Gloucestershire",
+      streetAddress: "123 Insurance House, Cotswold Way",
+      addressLocality: "Gloucestershire",
+      addressRegion: "England",
       postalCode: "GL1 2AB",
-      addressCountry: "UK",
+      addressCountry: "GB",
     },
-    areaServed: ["GB"],
-    sameAs: ["https://thatchedroofinsurance.vercel.app/blog/thatched-roof-chimney-regulations"],
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "51.8642",
+      longitude: "-2.2382",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "United Kingdom",
+    },
+    priceRange: "$$",
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "17:00",
+    },
+    sameAs: [
+      "https://thatchedroofinsurance.co.uk/blog/thatched-roof-chimney-regulations",
+    ],
     potentialAction: {
-      "@type": "Action",
-      name: "Get a thatched roof insurance quote",
-      target: "https://thatchedroofinsurance.vercel.app/quote",
+      "@type": "ReserveAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://thatchedroofinsurance.co.uk/quote",
+        actionPlatform: [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform",
+        ],
+      },
+      result: {
+        "@type": "Reservation",
+        name: "Thatched Roof Insurance Quote",
+      },
     },
   };
 

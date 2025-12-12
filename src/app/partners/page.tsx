@@ -7,13 +7,26 @@ import { Building2, Shield, TrendingUp, Users, CheckCircle } from "lucide-react"
 export const metadata: Metadata = {
   title: "Our Insurance Partners | Thatched Roof Insurance",
   description:
-    "We work with multiple specialist brokers and insurers to find you the best thatched roof insurance quote. Access to exclusive rates and comprehensive cover.",
+    "We work with multiple specialist brokers and insurers to find you the best thatched roof insurance quote. Access exclusive rates and comprehensive cover.",
   keywords: [
     "thatched roof insurance brokers",
     "insurance partners",
     "specialist brokers",
     "thatched property insurance",
   ],
+  openGraph: {
+    title: "Our Insurance Partners | Thatched Roof Insurance",
+    description:
+      "We work with multiple specialist brokers and insurers to find you the best thatched roof insurance quote. Access exclusive rates and comprehensive cover.",
+    url: "https://thatchedroofinsurance.co.uk/partners",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Insurance Partners | Thatched Roof Insurance",
+    description:
+      "We work with multiple specialist brokers and insurers to find you the best thatched roof insurance quote. Access exclusive rates and comprehensive cover.",
+  },
 };
 
 const benefits = [
