@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -43,6 +43,8 @@ interface QuoteFormProps {
 }
 
 const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
+  // Check for hero form data on mount
+  const [initialStep, setInitialStep] = useState(1);
   const [step, setStep] = useState(1);
   const totalSteps = 7;
   
@@ -66,6 +68,32 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
     phone: "",
     preferredContact: "email",
   });
+
+  useEffect(() => {
+    // Check for hero form data in sessionStorage
+    if (typeof window !== "undefined") {
+      const heroDataStr = sessionStorage.getItem("heroQuoteData");
+      if (heroDataStr) {
+        try {
+          const heroData = JSON.parse(heroDataStr);
+          // Pre-fill form with hero data
+          setFormData(prev => ({
+            ...prev,
+            postcode: heroData.postcode || prev.postcode,
+            heatSource: heroData.heatSource || prev.heatSource,
+            chimneySweptYearly: heroData.chimneySweptYearly || prev.chimneySweptYearly,
+          }));
+          // Start at step 2 since step 1 (property basics) is already partially filled
+          setInitialStep(2);
+          setStep(2);
+          // Clear the sessionStorage after using it
+          sessionStorage.removeItem("heroQuoteData");
+        } catch (e) {
+          console.error("Error parsing hero quote data:", e);
+        }
+      }
+    }
+  }, []);
 
   const updateFormData = (field: keyof FormData, value: string | string[]) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -125,7 +153,12 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
   };
 
   const handleBack = () => {
-    if (step > 1) setStep(step - 1);
+    if (step > initialStep) {
+      setStep(step - 1);
+    } else if (step === initialStep && initialStep > 1) {
+      // If we started at step 2, allow going back to step 1
+      setStep(1);
+    }
   };
 
   const isStepValid = (): boolean => {
@@ -197,7 +230,12 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
             style={{ width: `${((step - 1) / (totalSteps - 1)) * 100}%` }}
           />
         </div>
-        <p className="text-xs text-muted-foreground text-center mt-1">Step {step} of {totalSteps}</p>
+        <p className="text-xs text-muted-foreground text-center mt-1">
+          Step {step} of {totalSteps}
+          {initialStep === 2 && step === 2 && (
+            <span className="block text-xs text-primary mt-1">✓ Some details pre-filled from quick quote</span>
+          )}
+        </p>
       </div>
 
       {/* Step 1: Property Basics */}
@@ -251,6 +289,9 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
             <div className="border-t border-border pt-4">
               <Label htmlFor="postcode" className="text-foreground font-medium text-sm mb-2 block">
                 Property Postcode
+                {formData.postcode && initialStep === 2 && (
+                  <span className="ml-2 text-xs text-primary">(pre-filled)</span>
+                )}
               </Label>
               <Input
                 id="postcode"
@@ -394,11 +435,19 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
           <div>
             <h3 className="font-serif text-xl font-semibold text-foreground mb-1">Heating Setup</h3>
             <p className="text-sm text-muted-foreground">Important fire safety information.</p>
+            {initialStep === 2 && (formData.heatSource || formData.chimneySweptYearly) && (
+              <p className="text-xs text-primary mt-1">✓ Some details pre-filled from quick quote</p>
+            )}
           </div>
 
           <div className="space-y-3">
             <div>
-              <Label className="text-foreground font-medium text-sm">Heating setup</Label>
+              <Label className="text-foreground font-medium text-sm">
+                Heating setup
+                {formData.heatSource && initialStep === 2 && (
+                  <span className="ml-2 text-xs text-primary">(pre-filled)</span>
+                )}
+              </Label>
               <RadioGroup
                 value={formData.heatSource}
                 onValueChange={(value) => updateFormData("heatSource", value)}
@@ -418,7 +467,12 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
             </div>
 
             <div>
-              <Label className="text-foreground font-medium text-sm">Is the chimney swept yearly?</Label>
+              <Label className="text-foreground font-medium text-sm">
+                Is the chimney swept yearly?
+                {formData.chimneySweptYearly && initialStep === 2 && (
+                  <span className="ml-2 text-xs text-primary">(pre-filled)</span>
+                )}
+              </Label>
               <RadioGroup
                 value={formData.chimneySweptYearly}
                 onValueChange={(value) => updateFormData("chimneySweptYearly", value)}
@@ -659,7 +713,7 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
         <Button
           variant="outline"
           onClick={handleBack}
-          disabled={step === 1}
+          disabled={step === 1 && initialStep === 1}
           className="gap-2 h-9 text-sm"
         >
           <ArrowLeft className="w-4 h-4" />

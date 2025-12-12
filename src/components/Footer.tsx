@@ -13,12 +13,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <Image src="/logo.png" alt="Thatched Roof Insurance logo" width={44} height={44} className="rounded-lg" />
-              <div className="leading-tight">
-                <span className="font-serif font-semibold text-lg block">Thatched Roof</span>
-                <span className="text-primary-foreground/80 block -mt-0.5">Insurance</span>
-              </div>
+            <div className="mb-4">
+              <Image src="/logo.png" alt="Thatched Roof Insurance logo" width={120} height={120} className="rounded-lg" />
             </div>
             <p className="text-background/70 text-sm leading-relaxed mb-4">
               Specialist insurance for thatched properties. Protecting your unique home with expert knowledge and dedicated service.
@@ -45,6 +41,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li><Link href="/quote" className="text-background/70 hover:text-background transition-colors">Get a Quote</Link></li>
               <li><Link href="/blog" className="text-background/70 hover:text-background transition-colors">Blog</Link></li>
+              <li><Link href="/partners" className="text-background/70 hover:text-background transition-colors">Our Partners</Link></li>
               <li><a href="#why-choose-us" className="text-background/70 hover:text-background transition-colors">Why Choose Us</a></li>
               <li><a href="#coverage" className="text-background/70 hover:text-background transition-colors">What We Cover</a></li>
               <li><a href="#claims" className="text-background/70 hover:text-background transition-colors">Make a Claim</a></li>

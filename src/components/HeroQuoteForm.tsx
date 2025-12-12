@@ -24,6 +24,8 @@ const HeroQuoteForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Store hero form data in sessionStorage to pass to quote form
+    sessionStorage.setItem("heroQuoteData", JSON.stringify(formData));
     router.push("/quote");
   };
 

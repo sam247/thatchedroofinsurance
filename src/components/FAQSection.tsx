@@ -64,27 +64,48 @@ const FAQSection = () => {
           </p>
         </div>
 
-        {/* FAQ Accordion */}
-        <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="bg-card border border-border rounded-xl px-6 data-[state=open]:shadow-md transition-shadow"
-              >
-                <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary py-5">
-                  <div className="flex items-start gap-3">
-                    <HelpCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span>{faq.question}</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-5 pl-8">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+        {/* FAQ Accordion - 2 Columns */}
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-4">
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqs.slice(0, Math.ceil(faqs.length / 2)).map((faq, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index}`}
+                  className="bg-card border border-border rounded-xl px-6 data-[state=open]:shadow-md transition-shadow"
+                >
+                  <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary py-5">
+                    <div className="flex items-start gap-3">
+                      <HelpCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>{faq.question}</span>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-5 pl-8">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqs.slice(Math.ceil(faqs.length / 2)).map((faq, index) => (
+                <AccordionItem
+                  key={index + Math.ceil(faqs.length / 2)}
+                  value={`item-${index + Math.ceil(faqs.length / 2)}`}
+                  className="bg-card border border-border rounded-xl px-6 data-[state=open]:shadow-md transition-shadow"
+                >
+                  <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary py-5">
+                    <div className="flex items-start gap-3">
+                      <HelpCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>{faq.question}</span>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-5 pl-8">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
 
         {/* Contact CTA */}
