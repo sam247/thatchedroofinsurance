@@ -40,21 +40,21 @@ const QuotePage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <Header mode="light" />
       <main className="bg-muted min-h-screen">
-        <section className="container-custom py-12 md:py-16">
-          <div className="max-w-4xl mx-auto text-center mb-10">
+        <section className="container-custom py-6 md:py-8">
+          <div className="max-w-4xl mx-auto text-center mb-6">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Get a Quote</span>
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mt-3 mb-3">
+            <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-2 mb-2">
               {quoteComplete ? "Your Quote is Ready" : "Get Your Indicative Quote"}
             </h1>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-muted-foreground text-base">
               {quoteComplete
                 ? "Thank you for your enquiry. Here's your estimated premium."
                 : "Answer a few questions about your thatched property and we'll provide an indicative quote in minutes."}
             </p>
             {!quoteComplete && (
-              <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground mt-4">
+              <div className="flex flex-wrap justify-center gap-4 text-xs text-muted-foreground mt-2">
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4 text-primary" />
                   <span>Takes 3 minutes</span>
@@ -72,7 +72,7 @@ const QuotePage = () => {
           </div>
 
           <div className="max-w-3xl mx-auto">
-            <div className="bg-background rounded-2xl shadow-xl border border-border p-6 md:p-8">
+            <div className="bg-background rounded-2xl shadow-xl border border-border p-4 md:p-6 max-h-[calc(100vh-280px)] overflow-y-auto">
               {quoteComplete && quoteData ? (
                 <QuoteSummary quote={quoteData.quote} formData={quoteData.formData} />
               ) : (
