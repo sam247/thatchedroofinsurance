@@ -202,19 +202,19 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
 
       {/* Step 1: Property Basics */}
       {step === 1 && (
-        <div className="space-y-4 animate-fade-in">
+        <div className="space-y-5 animate-fade-in">
           <div>
-            <h3 className="font-serif text-xl font-semibold text-foreground mb-1">Property Basics</h3>
-            <p className="text-sm text-muted-foreground">Tell us about your thatched property.</p>
+            <h3 className="font-serif text-lg font-semibold text-foreground mb-0.5">Property Basics</h3>
+            <p className="text-xs text-muted-foreground">Tell us about your thatched property.</p>
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-4 border-t border-border pt-4">
             <div>
-              <Label className="text-foreground font-medium text-sm">Property Age</Label>
+              <Label className="text-foreground font-medium text-sm mb-2 block">Property Age</Label>
               <RadioGroup
                 value={formData.propertyAge}
                 onValueChange={(value) => updateFormData("propertyAge", value)}
-                className="grid grid-cols-2 gap-2 mt-1.5"
+                className="grid grid-cols-2 gap-2"
               >
                 {propertyAgeOptions.map((option) => (
                   <div key={option.value}>
@@ -225,7 +225,7 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
                     />
                     <Label
                       htmlFor={option.value}
-                      className="flex items-center justify-center p-3 border-2 rounded-lg cursor-pointer text-sm peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/5 hover:bg-muted transition-colors"
+                      className="flex items-center justify-center p-2.5 border-2 rounded-lg cursor-pointer text-sm peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/5 hover:bg-muted transition-colors"
                     >
                       {option.label}
                     </Label>
@@ -234,8 +234,8 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
               </RadioGroup>
             </div>
 
-            <div>
-              <Label htmlFor="rebuildValue" className="text-foreground font-medium text-sm">
+            <div className="border-t border-border pt-4">
+              <Label htmlFor="rebuildValue" className="text-foreground font-medium text-sm mb-2 block">
                 Estimated Rebuild Value (£)
               </Label>
               <Input
@@ -244,15 +244,12 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
                 placeholder="e.g., 450000"
                 value={formData.rebuildValue}
                 onChange={(e) => updateFormData("rebuildValue", e.target.value)}
-                className="mt-1.5 h-10"
+                className="h-9"
               />
-              <p className="text-xs text-muted-foreground mt-1">
-                This is the cost to rebuild your property, not its market value.
-              </p>
             </div>
 
-            <div>
-              <Label htmlFor="postcode" className="text-foreground font-medium text-sm">
+            <div className="border-t border-border pt-4">
+              <Label htmlFor="postcode" className="text-foreground font-medium text-sm mb-2 block">
                 Property Postcode
               </Label>
               <Input
@@ -260,7 +257,7 @@ const QuoteForm = ({ onQuoteComplete }: QuoteFormProps) => {
                 placeholder="e.g., GL1 2AB"
                 value={formData.postcode}
                 onChange={(e) => updateFormData("postcode", e.target.value.toUpperCase())}
-                className="mt-1.5 h-10"
+                className="h-9"
               />
             </div>
           </div>

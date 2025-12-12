@@ -37,6 +37,7 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
 
   const isTransparent = mode === "transparent";
   const textColor = isTransparent ? "text-white" : "text-foreground";
+  const logoPath = isTransparent ? "/logo.png" : "/logo_black.png";
 
   return (
     <header
@@ -51,7 +52,7 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
           {/* Logo only */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo.png"
+              src={logoPath}
               alt="Thatched Roof Insurance logo"
               width={180}
               height={58}
