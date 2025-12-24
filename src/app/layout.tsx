@@ -29,7 +29,13 @@ export const metadata: Metadata = {
     "buildings insurance",
     "contents insurance",
     "specialist home insurance",
+    "thatched cottage insurance",
+    "grade 2 listed thatched insurance",
+    "thatched roof insurance UK",
   ],
+  alternates: {
+    canonical: "https://thatchedroofinsurance.co.uk",
+  },
   openGraph: {
     type: "website",
     locale: "en_GB",

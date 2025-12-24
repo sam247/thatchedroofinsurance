@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Star, Quote } from "lucide-react";
 
 const CustomerReviews = () => {
@@ -99,7 +100,29 @@ const CustomerReviews = () => {
               <div className="pt-4 border-t border-border">
                 <p className="font-semibold text-foreground">{review.name}</p>
                 <div className="flex items-center justify-between text-sm text-muted-foreground">
-                  <span>{review.location}</span>
+                  {review.location === 'Cotswolds' ? (
+                    <Link href="/thatched-roof-insurance-cotswolds" className="text-primary hover:underline font-semibold">
+                      {review.location}
+                    </Link>
+                  ) : review.location === 'Devon' ? (
+                    <Link href="/thatched-roof-insurance-devon" className="text-primary hover:underline font-semibold">
+                      {review.location}
+                    </Link>
+                  ) : review.location === 'Norfolk' ? (
+                    <Link href="/thatched-roof-insurance-norfolk" className="text-primary hover:underline font-semibold">
+                      {review.location}
+                    </Link>
+                  ) : review.location === 'Hampshire' ? (
+                    <Link href="/thatched-roof-insurance-hampshire" className="text-primary hover:underline font-semibold">
+                      {review.location}
+                    </Link>
+                  ) : review.location === 'Dorset' ? (
+                    <Link href="/thatched-roof-insurance-dorset" className="text-primary hover:underline font-semibold">
+                      {review.location}
+                    </Link>
+                  ) : (
+                    <span>{review.location}</span>
+                  )}
                   <span>{review.date}</span>
                 </div>
               </div>

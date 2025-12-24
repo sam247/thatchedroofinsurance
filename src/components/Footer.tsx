@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer className="bg-foreground text-background">
       <div className="container-custom section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="mb-4">
@@ -40,12 +40,12 @@ const Footer = () => {
             <h4 className="font-serif font-semibold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/quote" className="text-background/70 hover:text-background transition-colors">Get a Quote</Link></li>
+              <li><Link href="/about" className="text-background/70 hover:text-background transition-colors">About Us</Link></li>
+              <li><Link href="/contact" className="text-background/70 hover:text-background transition-colors">Contact Us</Link></li>
               <li><Link href="/blog" className="text-background/70 hover:text-background transition-colors">Blog</Link></li>
               <li><Link href="/partners" className="text-background/70 hover:text-background transition-colors">Our Partners</Link></li>
               <li><a href="#why-choose-us" className="text-background/70 hover:text-background transition-colors">Why Choose Us</a></li>
               <li><a href="#coverage" className="text-background/70 hover:text-background transition-colors">What We Cover</a></li>
-              <li><a href="#claims" className="text-background/70 hover:text-background transition-colors">Make a Claim</a></li>
-              <li><a href="#faq" className="text-background/70 hover:text-background transition-colors">FAQs</a></li>
             </ul>
           </div>
 
@@ -53,11 +53,25 @@ const Footer = () => {
           <div>
             <h4 className="font-serif font-semibold text-lg mb-4">Our Policies</h4>
             <ul className="space-y-2 text-sm">
-              <li><span className="text-background/70">Buildings Insurance</span></li>
-              <li><span className="text-background/70">Contents Insurance</span></li>
-              <li><span className="text-background/70">Combined Cover</span></li>
+              <li><Link href="/buildings-insurance" className="text-background/70 hover:text-background transition-colors">Buildings Insurance</Link></li>
+              <li><Link href="/contents-insurance" className="text-background/70 hover:text-background transition-colors">Contents Insurance</Link></li>
+              <li><Link href="/combined-insurance" className="text-background/70 hover:text-background transition-colors">Combined Cover</Link></li>
               <li><span className="text-background/70">Outbuildings Cover</span></li>
               <li><span className="text-background/70">Liability Insurance</span></li>
+            </ul>
+          </div>
+
+          {/* Locations */}
+          <div>
+            <h4 className="font-serif font-semibold text-lg mb-4">Areas We Cover</h4>
+            <ul className="space-y-2 text-sm">
+              <li><Link href="/locations" className="text-background/70 hover:text-background transition-colors font-semibold">All Locations →</Link></li>
+              <li><Link href="/thatched-roof-insurance-dorset" className="text-background/70 hover:text-background transition-colors">Dorset</Link></li>
+              <li><Link href="/thatched-roof-insurance-devon" className="text-background/70 hover:text-background transition-colors">Devon</Link></li>
+              <li><Link href="/thatched-roof-insurance-hampshire" className="text-background/70 hover:text-background transition-colors">Hampshire</Link></li>
+              <li><Link href="/thatched-roof-insurance-wiltshire" className="text-background/70 hover:text-background transition-colors">Wiltshire</Link></li>
+              <li><Link href="/thatched-roof-insurance-cotswolds" className="text-background/70 hover:text-background transition-colors">Cotswolds</Link></li>
+              <li><Link href="/thatched-roof-insurance-norfolk" className="text-background/70 hover:text-background transition-colors">Norfolk</Link></li>
             </ul>
           </div>
 
@@ -67,8 +81,8 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li><Link href="/privacy-policy" className="text-background/70 hover:text-background transition-colors">Privacy Policy</Link></li>
               <li><Link href="/terms-of-service" className="text-background/70 hover:text-background transition-colors">Terms & Conditions</Link></li>
-              <li><a href="#" className="text-background/70 hover:text-background transition-colors">Cookie Policy</a></li>
-              <li><a href="#" className="text-background/70 hover:text-background transition-colors">Complaints Procedure</a></li>
+              <li><Link href="/cookie-policy" className="text-background/70 hover:text-background transition-colors">Cookie Policy</Link></li>
+              <li><Link href="/complaints-procedure" className="text-background/70 hover:text-background transition-colors">Complaints Procedure</Link></li>
             </ul>
           </div>
         </div>

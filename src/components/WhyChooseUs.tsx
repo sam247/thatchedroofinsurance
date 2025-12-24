@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Shield, Users, CreditCard, Wrench, Phone, FileCheck, Umbrella, Home } from "lucide-react";
 
 const WhyChooseUs = () => {
@@ -54,7 +55,7 @@ const WhyChooseUs = () => {
             Specialists in Thatched Property Insurance
           </h2>
           <p className="text-muted-foreground text-lg">
-            We've been protecting thatched homes for over three decades. Our expertise means you get the right cover at the right price.
+            We've been protecting thatched homes for over three decades. Our expertise means you get the right cover at the right price. <Link href="/about" className="text-primary font-semibold hover:underline">Learn more about us</Link> or <Link href="/contact" className="text-primary font-semibold hover:underline">get in touch</Link>.
           </p>
         </div>
 

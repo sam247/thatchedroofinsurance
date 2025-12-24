@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Blog | Thatched Roof Insurance Guides & Tips",
   description:
     "Expert guides and tips for protecting and maintaining thatched properties. Learn about chimney regulations, costs, maintenance, and insurance requirements.",
+  alternates: {
+    canonical: "https://thatchedroofinsurance.co.uk/blog",
+  },
   openGraph: {
     title: "Blog | Thatched Roof Insurance Guides & Tips",
     description:

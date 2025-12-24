@@ -57,7 +57,7 @@ const WhatWeCover = () => {
             Comprehensive Protection for Your Thatched Home
           </h2>
           <p className="text-muted-foreground text-lg">
-            Our policies are designed specifically for thatched properties, covering the unique risks and requirements of your home.
+            Our policies are designed specifically for thatched properties, covering the unique risks and requirements of your home. Learn more about our <Link href="/buildings-insurance" className="text-primary font-semibold hover:underline">buildings insurance</Link>, <Link href="/contents-insurance" className="text-primary font-semibold hover:underline">contents insurance</Link>, or <Link href="/combined-insurance" className="text-primary font-semibold hover:underline">combined cover</Link>.
           </p>
         </div>
 
@@ -66,7 +66,17 @@ const WhatWeCover = () => {
           {coverageItems.map((section, index) => (
             <div key={index} className="bg-card border border-border rounded-2xl p-6 md:p-8 shadow-sm">
               <h3 className="font-serif text-2xl font-semibold text-foreground mb-6 pb-4 border-b border-border">
-                {section.category}
+                {section.category === "Buildings Cover" ? (
+                  <Link href="/buildings-insurance" className="hover:text-primary transition-colors">
+                    {section.category}
+                  </Link>
+                ) : section.category === "Contents Cover" ? (
+                  <Link href="/contents-insurance" className="hover:text-primary transition-colors">
+                    {section.category}
+                  </Link>
+                ) : (
+                  section.category
+                )}
               </h3>
               <ul className="space-y-4">
                 {section.items.map((item, itemIndex) => (

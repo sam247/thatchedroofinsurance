@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     "specialist brokers",
     "thatched property insurance",
   ],
+  alternates: {
+    canonical: "https://thatchedroofinsurance.co.uk/partners",
+  },
   openGraph: {
     title: "Our Insurance Partners | Thatched Roof Insurance",
     description:

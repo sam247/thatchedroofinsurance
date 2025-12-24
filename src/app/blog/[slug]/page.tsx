@@ -2,9 +2,11 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import Script from "next/script";
 import { ArrowLeft, Calendar, Clock, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { findArticleBySlug, articles } from "@/data/articles";
 
 type Props = {
@@ -23,6 +25,9 @@ export function generateMetadata({ params }: Props): Metadata {
   return {
     title,
     description: article.excerpt,
+    alternates: {
+      canonical: `https://thatchedroofinsurance.co.uk/blog/${params.slug}`,
+    },
     openGraph: {
       title: article.title,
       description: article.excerpt,
@@ -85,11 +90,46 @@ export default function BlogPostPage({ params }: Props) {
   const article = findArticleBySlug(params.slug);
   if (!article) return notFound();
 
+  // Article Schema
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.excerpt,
+    image: `https://thatchedroofinsurance.co.uk${article.image}`,
+    datePublished: article.date,
+    dateModified: article.date,
+    author: {
+      "@type": "Organization",
+      name: "Thatched Roof Insurance",
+      url: "https://thatchedroofinsurance.co.uk",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Thatched Roof Insurance",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://thatchedroofinsurance.co.uk/logo.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://thatchedroofinsurance.co.uk/blog/${params.slug}`,
+    },
+    articleBody: article.content.join(" "),
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <Script
+        id="article-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <Header mode="light" />
       <main className="container-custom py-16">
         <article className="max-w-4xl mx-auto">
+          <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: article.title, href: `/blog/${params.slug}` }]} />
           <Link href="/blog" className="inline-flex items-center gap-2 text-primary font-semibold mb-8 hover:gap-3 transition-all">
             <ArrowLeft className="w-4 h-4" />
             Back to Articles

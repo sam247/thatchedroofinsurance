@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Phone, FileText, Users, CheckCircle, Clock, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -43,7 +44,7 @@ const ClaimsProcess = () => {
             Making a Claim is Simple
           </h2>
           <p className="text-primary-foreground/80 text-lg">
-            When the unexpected happens, our specialist claims team is here to help. We make the process as straightforward as possible.
+            When the unexpected happens, our specialist claims team is here to help. We make the process as straightforward as possible. For more information, see our <Link href="/blog/does-home-insurnace-cover-roof-damage-on-a-thatched-proerpty" className="text-accent font-semibold hover:underline">guide on roof damage coverage</Link>.
           </p>
         </div>
 

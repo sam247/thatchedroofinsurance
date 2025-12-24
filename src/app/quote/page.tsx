@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Get a Quote | Thatched Roof Insurance",
   description:
     "Get your indicative thatched roof insurance quote in minutes. Answer a few questions about your property for a no-obligation quote and specialist callback.",
+  alternates: {
+    canonical: "https://thatchedroofinsurance.co.uk/quote",
+  },
   openGraph: {
     title: "Get a Quote | Thatched Roof Insurance",
     description:

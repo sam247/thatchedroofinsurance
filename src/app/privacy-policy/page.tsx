@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Thatched Roof Insurance",
   description:
     "Read our privacy policy to understand how Thatched Roof Insurance collects, uses, and protects your personal information in compliance with UK data protection laws.",
+  alternates: {
+    canonical: "https://thatchedroofinsurance.co.uk/privacy-policy",
+  },
   openGraph: {
     title: "Privacy Policy | Thatched Roof Insurance",
     description:
