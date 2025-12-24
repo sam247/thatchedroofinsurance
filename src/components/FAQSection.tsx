@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { HelpCircle } from "lucide-react";
+import Link from "next/link";
 
 const FAQSection = () => {
   const faqs = [
@@ -30,7 +31,14 @@ const FAQSection = () => {
     },
     {
       question: "What affects the cost of my insurance?",
-      answer: "Several factors influence your premium: the age and condition of your thatch, property rebuild value, thatch type (reed vs straw), chimney condition, whether you have open fires or wood burners, proximity to other thatched properties, claims history, and the level of cover you choose.",
+      answer: (
+        <>
+          Several factors influence your premium: the age and condition of your thatch, property rebuild value, thatch type (reed vs straw), chimney condition, whether you have open fires or wood burners, proximity to other thatched properties, claims history, and the level of cover you choose.{" "}
+          <Link href="/blog/why-is-thatched-cottage-insurance-expensive" className="text-primary font-semibold hover:underline">
+            Learn more about why thatched cottage insurance costs more
+          </Link>.
+        </>
+      ),
     },
     {
       question: "How do I make a claim?",

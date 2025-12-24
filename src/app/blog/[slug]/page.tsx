@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowLeft, Calendar, Clock } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { findArticleBySlug, articles } from "@/data/articles";
@@ -51,6 +51,36 @@ export function generateStaticParams() {
   return articles.map((article) => ({ slug: article.slug }));
 }
 
+// Helper function to parse links in content
+function parseContentWithLinks(text: string) {
+  // Match markdown-style links: [text](/url)
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const parts: (string | JSX.Element)[] = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = linkRegex.exec(text)) !== null) {
+    // Add text before the link
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index));
+    }
+    // Add the link
+    const linkText = match[1];
+    const linkUrl = match[2];
+    parts.push(
+      <Link key={match.index} href={linkUrl} className="text-primary font-semibold hover:underline">
+        {linkText}
+      </Link>
+    );
+    lastIndex = match.index + match[0].length;
+  }
+  // Add remaining text
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+  return parts.length > 0 ? parts : [text];
+}
+
 export default function BlogPostPage({ params }: Props) {
   const article = findArticleBySlug(params.slug);
   if (!article) return notFound();
@@ -86,10 +116,44 @@ export default function BlogPostPage({ params }: Props) {
 
           <div className="space-y-5 text-foreground leading-relaxed text-lg">
             {article.content.map((paragraph, idx) => (
-              <p key={idx}>{paragraph}</p>
+              <p key={idx}>{parseContentWithLinks(paragraph)}</p>
             ))}
           </div>
         </article>
+
+        {/* Related Articles */}
+        {article.relatedArticles && article.relatedArticles.length > 0 && (
+          <section className="mt-16 pt-16 border-t border-border">
+            <h2 className="font-serif text-2xl font-bold text-foreground mb-6">Related Articles</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {article.relatedArticles.map((relatedSlug) => {
+                const relatedArticle = findArticleBySlug(relatedSlug);
+                if (!relatedArticle) return null;
+                return (
+                  <Link
+                    key={relatedSlug}
+                    href={`/blog/${relatedSlug}`}
+                    className="group bg-card rounded-xl border border-border p-6 hover:shadow-lg transition-all"
+                  >
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                      <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-semibold">
+                        {relatedArticle.category}
+                      </span>
+                    </div>
+                    <h3 className="font-serif text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                      {relatedArticle.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm line-clamp-2 mb-4">{relatedArticle.excerpt}</p>
+                    <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">
+                      Read Article
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+          </section>
+        )}
       </main>
       <Footer />
     </div>
