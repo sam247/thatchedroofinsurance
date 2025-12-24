@@ -94,7 +94,7 @@ export default function BlogPostPage({ params }: Props) {
           Back to Articles
         </Link>
 
-        <article className="max-w-4xl">
+        <article className="max-w-4xl mx-auto">
           <div className="flex items-center gap-3 text-sm text-muted-foreground mb-4">
             <span className="bg-primary/10 text-primary px-3 py-1 rounded-full font-semibold text-xs">{article.category}</span>
             <span className="inline-flex items-center gap-1">
@@ -123,7 +123,7 @@ export default function BlogPostPage({ params }: Props) {
 
         {/* Related Articles */}
         {article.relatedArticles && article.relatedArticles.length > 0 && (
-          <section className="mt-16 pt-16 border-t border-border">
+          <section className="mt-16 pt-16 border-t border-border max-w-4xl mx-auto">
             <h2 className="font-serif text-2xl font-bold text-foreground mb-6">Related Articles</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {article.relatedArticles.map((relatedSlug) => {
