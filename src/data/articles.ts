@@ -241,6 +241,33 @@ export const articles: Article[] = [
       "thatched-commercial-property-insurance",
     ],
   },
+  {
+    slug: "does-home-insurnace-cover-roof-damage-on-a-thatched-proerpty",
+    category: "Insurance",
+    title: "Does Home Insurance Cover Roof Damage on a Thatched Property?",
+    excerpt:
+      "Whether home insurance covers roof damage on a thatched property depends on the exact wording of the policy, the cause of the damage and how well the roof has been maintained. Standard home policies often exclude or tightly limit thatched risks, so most owners need specialist cover and must pay close attention to conditions around fire, storm and wear and tear.",
+    content: [
+      "Whether home insurance covers roof damage on a thatched property depends on the exact wording of the policy, the cause of the damage and how well the roof has been maintained. Standard home policies often exclude or tightly limit thatched risks, so most owners need specialist cover and must pay close attention to conditions around fire, storm and wear and tear.",
+      "Most specialist thatched home insurance policies will cover sudden, unforeseen damage to the roof caused by insured events such as fire, storm, impact (for example, falling trees) or escape of water. This usually means the cost to repair or reinstate the damaged thatch, subject to the policy excess and any specific inner limits that apply.",
+      "However, insurers generally do not pay for gradual deterioration, rot or damage caused purely by age, neglect or poor maintenance. If a roof has reached the end of its natural life or has not been looked after in line with the policy's expectations, any claim linked to that lack of upkeep can be declined or reduced.",
+      "Thatched property policies often include more detailed conditions and exclusions than standard home cover, and these can directly affect roof claims. Wear and tear exclusions mean gradual thinning of thatch, weathering and general ageing are almost always excluded, even on specialist policies. Vermin and insects can cause damage that may be excluded or only covered in limited circumstances. Defective workmanship is another concern: if poor-quality thatching or unapproved alterations contributed to the damage, insurers may refuse to pay for correcting those defects.",
+      "Policies also frequently impose \"warranties\" around fire safety, such as specified chimney sweeping frequencies, proper use and maintenance of solid‑fuel stoves and restrictions on bonfires or fireworks near the property. Failure to comply with these conditions can give an insurer grounds to limit or reject a fire‑related roof claim, even where thatch damage is severe. For detailed guidance on [chimney regulations for thatched properties](/blog/thatched-roof-chimney-regulations), see our comprehensive 2025 guide.",
+      "Fire is the most prominent risk insurers associate with thatched roofs, and most specialist policies are designed first and foremost around this peril. Where policyholders have complied with chimney and electrical safety requirements, a thatch fire is normally covered, including substantial repair or total roof replacement if necessary.",
+      "Storm damage is more nuanced, because insurers will often require evidence of a specific storm event that meets their definition (for example, unusually high winds) and may argue that long‑term weathering or poor condition made the roof vulnerable. Impact damage, such as a large branch or tree falling onto the thatch, is usually treated more straightforwardly as long as the tree was not obviously dead or dangerous and neglected.",
+      "Because the line between insured damage and excluded wear and tear can be fine, regular maintenance and good records are crucial for thatched owners. Routine checks by a reputable thatcher help identify issues before they become major problems, and contemporaneous notes support any later claim. Evidence of works, such as keeping invoices, reports and photographs for re‑thatching, patching, chimney works and electrical upgrades, demonstrates responsible ownership if a dispute arises. When a loss occurs, being able to show that the roof was in reasonable condition and that recommended maintenance had been carried out can significantly strengthen a claim.",
+      "Many mainstream home insurers either decline thatched properties altogether or impose significant exclusions and higher excesses on roof‑related claims. Specialist providers, on the other hand, design wordings around thatch risks and are usually clearer about what is and is not covered, including full or partial roof reinstatement after an insured event. Understanding [why thatched cottage insurance is expensive](/blog/why-is-thatched-cottage-insurance-expensive) helps explain why specialist cover is necessary.",
+      "Because policy terms vary, owners should always read the sections on buildings cover, exclusions, conditions and \"duties of the policyholder\" carefully, and raise questions with their broker or insurer before a loss occurs. For thatched properties in particular, checking exactly how roof damage is defined, what causes are covered and what maintenance is required is as important as comparing premiums. If you own a listed property, our [Grade II thatched cottage insurance checklist](/blog/grade-2-thatched-cottage-insruance-checklist) provides guidance on preparing for insurance quotes and understanding policy requirements.",
+    ],
+    image: "/does-home-insurnace-cover-roof-damage-on-a-thatched-proerpty.jpg",
+    date: "January 2025",
+    readTime: "7 min read",
+    relatedArticles: [
+      "why-is-thatched-cottage-insurance-expensive",
+      "grade-2-thatched-cottage-insruance-checklist",
+      "thatched-roof-chimney-regulations",
+    ],
+  },
 ];
 
 export const findArticleBySlug = (slug: string) => articles.find((article) => article.slug === slug);

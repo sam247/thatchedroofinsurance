@@ -89,12 +89,11 @@ export default function BlogPostPage({ params }: Props) {
     <div className="min-h-screen bg-background">
       <Header mode="light" />
       <main className="container-custom py-16">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-primary font-semibold mb-6 hover:gap-3 transition-all">
-          <ArrowLeft className="w-4 h-4" />
-          Back to Articles
-        </Link>
-
         <article className="max-w-4xl mx-auto">
+          <Link href="/blog" className="inline-flex items-center gap-2 text-primary font-semibold mb-8 hover:gap-3 transition-all">
+            <ArrowLeft className="w-4 h-4" />
+            Back to Articles
+          </Link>
           <div className="flex items-center gap-3 text-sm text-muted-foreground mb-4">
             <span className="bg-primary/10 text-primary px-3 py-1 rounded-full font-semibold text-xs">{article.category}</span>
             <span className="inline-flex items-center gap-1">
