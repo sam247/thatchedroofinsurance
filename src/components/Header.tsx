@@ -50,13 +50,14 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
       <div className={cn("container-custom", textColor)}>
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo only */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center flex-shrink-0">
             <Image
               src={logoPath}
               alt="Thatched Roof Insurance logo"
               width={180}
               height={58}
-              className="h-auto w-[180px]"
+              className="!w-[180px] !h-auto"
+              style={{ width: '180px', height: 'auto' }}
               priority
             />
           </Link>

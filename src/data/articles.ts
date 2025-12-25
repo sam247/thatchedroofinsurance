@@ -102,7 +102,7 @@ export const articles: Article[] = [
       "A thatched roof remains a substantial investment, but for properties where this distinctive feature aligns with architectural character and personal values, the authentic charm and long-term appeal often justify the premium cost compared to conventional roofing alternatives.",
     ],
     image: "/thatched-roof-cost-perm2.jpg",
-    date: "January 2025",
+    date: "December 2024",
     readTime: "7 min read",
     relatedArticles: [
       "how-long-does-a-thatched-roof-last",
@@ -140,7 +140,7 @@ export const articles: Article[] = [
       "A thatched roof can indeed last for many decades when properly installed and conscientiously maintained. Whether your thatch endures for 20 years or 40 years largely depends on your choices regarding material type, professional installation, geographic location, and—most importantly—your commitment to ongoing maintenance. By understanding these factors and investing in regular expert care, you can ensure that your thatched roof continues to provide both protection and aesthetic appeal for generations to come. The key lies not in hoping your roof lasts long, but in taking active steps to ensure it does.",
     ],
     image: "/how-long-does-a-thatched-roof-last.jpg",
-    date: "January 2025",
+    date: "November 2024",
     readTime: "8 min read",
     relatedArticles: [
       "thatched-roof-cost-perm2",
@@ -166,7 +166,7 @@ export const articles: Article[] = [
       "Ultimately, treating a thatched pub, B&B or holiday let as a specialist commercial risk rather than a slightly unusual home leads to more robust insurance and fewer disputes if something goes wrong. Preparing detailed information, investing in visible fire‑safety measures and choosing an experienced intermediary are the main levers owners control when seeking quotes.",
     ],
     image: "/thatched-commercial-property-insurance.jpg",
-    date: "January 2025",
+    date: "February 2025",
     readTime: "9 min read",
     relatedArticles: [
       "why-is-thatched-cottage-insurance-expensive",
@@ -196,7 +196,7 @@ export const articles: Article[] = [
       "Working through this checklist before you ask for quotes gives you a stronger position with specialist insurers and brokers, reduces the risk of awkward surprises at survey or claim stage, and helps ensure your Grade II thatched cottage is properly protected.",
     ],
     image: "/grade-2-thatched-cottage-insruance-checklist.jpg",
-    date: "January 2025",
+    date: "December 2024",
     readTime: "10 min read",
     relatedArticles: [
       "why-is-thatched-cottage-insurance-expensive",
@@ -233,7 +233,7 @@ export const articles: Article[] = [
       "In that context, the question for an owner is less \"Why is it more than my old semi?\" and more \"Would this policy genuinely rebuild my home as it stands if the worst happened?\". By understanding how insurers think about thatched risk, investing in sensible safety measures and using experienced brokers, owners can at least be confident that they are paying a fair price for the specialist protection their property needs.",
     ],
     image: "/why-is-thatched-cottage-insurance-expensive.jpg",
-    date: "January 2025",
+    date: "November 2024",
     readTime: "9 min read",
     relatedArticles: [
       "grade-2-thatched-cottage-insruance-checklist",
@@ -260,7 +260,7 @@ export const articles: Article[] = [
       "Because policy terms vary, owners should always read the sections on buildings cover, exclusions, conditions and \"duties of the policyholder\" carefully, and raise questions with their broker or insurer before a loss occurs. For thatched properties in particular, checking exactly how roof damage is defined, what causes are covered and what maintenance is required is as important as comparing premiums. If you own a listed property, our [Grade II thatched cottage insurance checklist](/blog/grade-2-thatched-cottage-insruance-checklist) provides guidance on preparing for insurance quotes and understanding policy requirements.",
     ],
     image: "/does-home-insurnace-cover-roof-damage-on-a-thatched-proerpty.jpg",
-    date: "January 2025",
+    date: "February 2025",
     readTime: "7 min read",
     relatedArticles: [
       "why-is-thatched-cottage-insurance-expensive",
