@@ -51,15 +51,18 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo only */}
           <Link href="/" className="flex items-center flex-shrink-0">
-            <Image
-              src={logoPath}
-              alt="Thatched Roof Insurance logo"
-              width={180}
-              height={58}
-              className="!w-[180px] !h-auto"
-              style={{ width: '180px', height: 'auto' }}
-              priority
-            />
+            <div className="relative" style={{ width: '180px', height: '58px' }}>
+              <Image
+                src={logoPath}
+                alt="Thatched Roof Insurance logo"
+                width={180}
+                height={58}
+                className="object-contain"
+                style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                sizes="180px"
+                priority
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
