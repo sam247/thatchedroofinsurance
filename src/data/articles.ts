@@ -268,6 +268,41 @@ export const articles: Article[] = [
       "thatched-roof-chimney-regulations",
     ],
   },
+  {
+    slug: "thatched-roof-insurance-cost-2026",
+    category: "Costs",
+    title: "How Much Does Thatched Roof Insurance Really Cost in 2026?",
+    excerpt:
+      "Thatched roof insurance in 2026 typically costs significantly more than standard home cover, with buildings premiums often running into several hundreds of pounds a year or more because thatched homes are seen as higher‑risk, higher‑cost properties to rebuild.",
+    content: [
+      "Thatched roof insurance in 2026 typically costs significantly more than standard home cover, with buildings premiums often running into several hundreds of pounds a year or more because thatched homes are seen as higher‑risk, higher‑cost properties to rebuild. The exact price depends on your roof, fire safety measures, rebuild value and location, so two similar‑looking cottages can end up with very different premiums.",
+      "Insurers class thatched homes as non‑standard construction, which means they sit outside the mass‑market pricing used for typical brick‑and‑tile houses. There are fewer insurers willing to write thatched risks, so the small, specialist market and higher claim severity both push prices up.",
+      "Thatched roofs carry a higher fire risk because the material burns fast and is harder to extinguish, which increases the chance of a large or total‑loss claim. Rebuilding a thatched cottage usually needs specialist thatchers and heritage‑skilled trades, so labour and materials cost more than for a standard modern home.",
+      "Mass‑market comparison data shows that premiums for thatched homes usually sit well above standard home insurance, with some owners reporting annual costs in the low thousands compared with a few hundred for similar non‑thatched houses. Specialist brokers also note that listed and higher‑value thatched properties often attract higher buildings sums insured, which naturally leads to higher premiums.",
+      "Contents insurance for thatched homes can sometimes be closer to \"normal\" pricing because the main perceived risk is to the structure rather than the belongings. However, where high‑value contents, art or jewellery are insured alongside an expensive building, the combined premium can still feel substantial.",
+      "Several core factors influence what you pay:",
+      "Roof and property type: Older, larger and listed thatched properties with complex, high or steep roofs generally cost more to insure because they are more expensive to rebuild.",
+      "Fire risk features: Insurers look hard at chimneys, woodburners, flues, spark arrestors and wiring; poor install or maintenance often results in higher premiums or even refusal. For detailed requirements, see our guide on [thatched roof chimney regulations](/blog/thatched-roof-chimney-regulations).",
+      "Rebuild cost and sums insured: The higher the professionally assessed rebuild value, the more you can expect to pay, especially where specialist materials and long rebuild times are involved. Understanding [thatched roof costs per square metre](/blog/thatched-roof-cost-perm2) helps explain why rebuild values are so high.",
+      "Location and access: Rural fire‑service response times, water access, historic local losses and flood exposure all feed into rating and can move premiums up or down.",
+      "Insurers also take into account your claims history, how the home is used (main residence, holiday home, Airbnb, or let) and any security or risk‑management measures you have in place.",
+      "Most thatched policies are priced individually by an underwriter rather than by an automated comparison‑site engine. Underwriters often ask for photos, chimney and burner details, thatcher reports, and sometimes a formal rebuild valuation before confirming terms.",
+      "The starting point is the buildings sum insured, which should reflect a realistic rebuild cost for the entire property including demolition, professional fees and prolonged alternative accommodation if a total‑loss fire occurs. On top of that, they apply rating for risk factors such as fire protections, occupancy pattern and postcode, and then add any load or discount for previous claims or strong risk management.",
+      "There are practical steps that can help keep thatched insurance costs under control without cutting essential cover:",
+      "Invest in fire safety: Regular chimney sweeping, lined flues, appropriately installed woodburners, electrical checks and, where appropriate, fire detection systems can all help you secure better terms.",
+      "Get rebuild values right: Using a professional rebuild assessment avoids both underinsurance penalties and overpaying for unrealistically high sums insured.",
+      "Work with a specialist broker: Brokers who focus on thatched properties often have access to niche schemes and can present your risk in a way underwriters are comfortable with, which can improve both price and cover quality.",
+      "You can also look at paying annually instead of monthly, choosing a sensible voluntary excess and keeping good documentation of maintenance and improvements, all of which many insurers view positively when pricing. Understanding [why thatched cottage insurance is expensive](/blog/why-is-thatched-cottage-insurance-expensive) helps explain the underlying cost drivers and what you can do to manage them. If you own a listed property, our [Grade II thatched cottage insurance checklist](/blog/grade-2-thatched-cottage-insruance-checklist) provides guidance on preparing for quotes and securing better terms.",
+    ],
+    image: "/thatched-roof-insurance-cost-2026.jpg",
+    date: "January 2026",
+    readTime: "6 min read",
+    relatedArticles: [
+      "why-is-thatched-cottage-insurance-expensive",
+      "thatched-roof-cost-perm2",
+      "grade-2-thatched-cottage-insruance-checklist",
+    ],
+  },
 ];
 
 export const findArticleBySlug = (slug: string) => articles.find((article) => article.slug === slug);
