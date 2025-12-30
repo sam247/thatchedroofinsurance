@@ -66,10 +66,10 @@ const ClaimsProcess = () => {
               </div>
               
               {/* Content */}
-              <h3 className="font-serif text-xl font-semibold mb-2">
+              <h3 className="font-serif text-xl font-semibold mb-2 text-white">
                 {step.title}
               </h3>
-              <p className="text-primary-foreground/70 text-sm mb-3">
+              <p className="text-white/70 text-sm mb-3">
                 {step.description}
               </p>
               
@@ -112,7 +112,7 @@ const ClaimsProcess = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white/60 text-white hover:bg-white/10 font-semibold w-full sm:w-auto"
+                className="border-white/60 bg-transparent text-white hover:bg-white/10 hover:text-white font-semibold w-full sm:w-auto"
               >
                 <FileText className="w-5 h-5 mr-2" />
                 Start Online Claim
