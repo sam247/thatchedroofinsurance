@@ -112,11 +112,15 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
       console.log('📏 ACTUAL LOGO SIZE:', {
         page: pathname,
         mode: mode,
+        logoFile: logoPath,
         containerActual: `${containerRect.width}px × ${containerRect.height}px`,
         imageActual: `${imageRect.width}px × ${imageRect.height}px`,
         containerComputed: `${containerStyles.width} × ${containerStyles.height}`,
         imageComputed: `${imageStyles.width} × ${imageStyles.height}`,
-        expected: '240px × 77px'
+        expected: '240px × 77px',
+        imageNaturalWidth: image.naturalWidth,
+        imageNaturalHeight: image.naturalHeight,
+        imageSrc: image.src
       });
       fetch('http://127.0.0.1:7243/ingest/7b4fcb29-439d-4583-849f-65701debe772', {
         method: 'POST',
