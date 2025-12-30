@@ -62,7 +62,7 @@ const ClaimsProcess = () => {
               
               {/* Icon */}
               <div className="w-12 h-12 bg-primary-foreground/20 rounded-xl flex items-center justify-center mb-4 mt-2">
-                <step.icon className="w-6 h-6" />
+                <step.icon className="w-6 h-6 text-white" />
               </div>
               
               {/* Content */}
@@ -74,8 +74,8 @@ const ClaimsProcess = () => {
               </p>
               
               {/* Highlight */}
-              <div className="flex items-center gap-2 text-accent text-sm font-medium">
-                <Clock className="w-4 h-4" />
+              <div className="flex items-center gap-2 text-white/90 text-sm font-medium">
+                <Clock className="w-4 h-4 text-white/90" />
                 {step.highlight}
               </div>
 
