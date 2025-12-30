@@ -156,17 +156,36 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
       <div className={cn("container-custom", textColor)}>
         <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo only */}
-          <Link href="/" className="flex items-center flex-shrink-0" style={{ flexShrink: 0 }}>
+          <Link href="/" className="flex items-center" style={{ flexShrink: 0 }}>
             <div 
               ref={logoContainerRef}
-              className="relative header-logo-container" 
+              style={{ 
+                width: '240px', 
+                height: '77px', 
+                minWidth: '240px', 
+                minHeight: '77px', 
+                maxWidth: '240px', 
+                maxHeight: '77px',
+                flexShrink: 0,
+                position: 'relative'
+              }}
             >
               <img
                 src={logoPath}
                 alt="Thatched Roof Insurance logo"
                 width={240}
                 height={77}
-                className="header-logo-img"
+                style={{
+                  width: '240px',
+                  height: '77px',
+                  minWidth: '240px',
+                  minHeight: '77px',
+                  maxWidth: '240px',
+                  maxHeight: '77px',
+                  objectFit: 'contain',
+                  display: 'block',
+                  flexShrink: 0
+                }}
               />
             </div>
           </Link>
