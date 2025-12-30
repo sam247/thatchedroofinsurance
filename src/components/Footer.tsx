@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Mail } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -16,15 +15,9 @@ const Footer = () => {
             <div className="mb-4">
               <Image src="/logo.png" alt="Thatched Roof Insurance logo" width={120} height={120} className="rounded-lg" />
             </div>
-            <p className="text-background/70 text-sm leading-relaxed mb-4">
+            <p className="text-background/70 text-sm leading-relaxed">
               Specialist insurance for thatched properties. Protecting your unique home with expert knowledge and dedicated service.
             </p>
-            <div className="flex flex-col gap-2 text-sm">
-              <a href="mailto:info@thatchedroofinsurance.co.uk" className="flex items-center gap-2 text-background/80 hover:text-background transition-colors" aria-label="Email us at info@thatchedroofinsurance.co.uk">
-                <Mail className="w-4 h-4" aria-hidden="true" />
-                info@thatchedroofinsurance.co.uk
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
