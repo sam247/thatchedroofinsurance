@@ -219,7 +219,8 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
                   minHeight: '77px',
                   maxWidth: '240px',
                   maxHeight: '77px',
-                  objectFit: 'contain',
+                  objectFit: 'cover',
+                  objectPosition: 'center',
                   display: 'block',
                   flexShrink: 0
                 }}
