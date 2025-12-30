@@ -51,14 +51,25 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
         <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo only */}
           <Link href="/" className="flex items-center flex-shrink-0">
-            <div className="relative flex-shrink-0" style={{ width: '240px', height: '77px', minWidth: '240px', minHeight: '77px', maxWidth: '240px', maxHeight: '77px' }}>
+            <div 
+              className="relative flex-shrink-0" 
+              style={{ 
+                width: '240px', 
+                height: '77px', 
+                minWidth: '240px', 
+                minHeight: '77px', 
+                maxWidth: '240px', 
+                maxHeight: '77px',
+                flexShrink: 0
+              }}
+            >
               <Image
                 src={logoPath}
                 alt="Thatched Roof Insurance logo"
                 width={240}
                 height={77}
-                className="object-contain"
-                style={{ width: '240px', height: '77px', objectFit: 'contain', display: 'block' }}
+                className="object-contain w-[240px] h-[77px]"
+                style={{ width: '240px', height: '77px', objectFit: 'contain', display: 'block', flexShrink: 0 }}
                 sizes="240px"
                 priority
                 unoptimized
