@@ -1,10 +1,11 @@
 'use client';
 
-import { useState, useEffect, FormEvent } from 'react';
+import { useState, FormEvent } from 'react';
 import { Button } from '@/components/ui/button';
 import { X, Send, Loader2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface Message {
   id: string;
@@ -32,8 +33,8 @@ export default function Chat() {
     setInput('');
     setIsLoading(true);
 
-    // Check for contact info
-    const hasContactInfo = /(email|phone|contact|name|@|call me|reach me)/i.test(input);
+    // Check for quote interest - detect when user wants quotes, pricing, or insurance
+    const hasQuoteInterest = /(quote|price|cost|premium|insurance|cover|policy|get a quote|how much|pricing)/i.test(input);
 
     try {
       const response = await fetch('/api/chat', {
@@ -41,7 +42,7 @@ export default function Chat() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           messages: [...messages, userMessage],
-          isLeadCapture: hasContactInfo,
+          isQuoteInterest: hasQuoteInterest,
         }),
       });
 
@@ -158,7 +159,7 @@ export default function Chat() {
                   <li>Fire safety requirements</li>
                 </ul>
                 <p className="mt-4 text-xs">
-                  Need a quote? Provide your contact details and we'll get back to you.
+                  Ready for a quote? <a href="/quote" className="text-primary underline font-semibold">Fill out our quick quote form</a> to get started.
                 </p>
               </div>
             )}
@@ -212,7 +213,7 @@ export default function Chat() {
               </Button>
             </div>
             <p className="text-xs text-muted-foreground mt-2">
-              Need a quote? Provide your contact details and we'll get back to you.
+              Ready for a quote? <a href="/quote" className="text-primary underline font-semibold">Get started with our quote form</a>
             </p>
           </form>
         </div>
