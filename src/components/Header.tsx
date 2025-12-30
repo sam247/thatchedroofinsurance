@@ -105,9 +105,10 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
         },
         timestamp: Date.now(),
         sessionId: 'debug-session',
-        runId: 'run1',
+        runId: 'run2',
         hypothesisId: 'B'
       };
+      console.log('🔍 Logo Debug:', logData);
       fetch('http://127.0.0.1:7243/ingest/7b4fcb29-439d-4583-849f-65701debe772', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

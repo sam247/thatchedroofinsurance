@@ -147,27 +147,28 @@
   .text-balance {
     text-wrap: balance;
   }
+}
 
-  .header-logo-container {
-    width: 240px !important;
-    height: 77px !important;
-    min-width: 240px !important;
-    min-height: 77px !important;
-    max-width: 240px !important;
-    max-height: 77px !important;
-    flex-shrink: 0 !important;
-  }
+/* Logo sizing - outside layer for maximum specificity */
+header .header-logo-container {
+  width: 240px !important;
+  height: 77px !important;
+  min-width: 240px !important;
+  min-height: 77px !important;
+  max-width: 240px !important;
+  max-height: 77px !important;
+  flex-shrink: 0 !important;
+}
 
-  .header-logo-img {
-    width: 240px !important;
-    height: 77px !important;
-    min-width: 240px !important;
-    min-height: 77px !important;
-    max-width: 240px !important;
-    max-height: 77px !important;
-    object-fit: contain !important;
-    display: block !important;
-    flex-shrink: 0 !important;
-  }
+header .header-logo-img {
+  width: 240px !important;
+  height: 77px !important;
+  min-width: 240px !important;
+  min-height: 77px !important;
+  max-width: 240px !important;
+  max-height: 77px !important;
+  object-fit: contain !important;
+  display: block !important;
+  flex-shrink: 0 !important;
 }
 
