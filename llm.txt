@@ -1,6 +1,108 @@
-Focus keyword: thatched roof insurance.
-Goals: attract UK thatched property owners, highlight 2025 chimney/stove requirements, drive quotes and compliance guidance.
-Internal links: /thatched-roof-insurance (pillar), /quote, /blog/thatched-roof-chimney-regulations, home anchors (#coverage #claims #faq).
-Tone: specialist, trustworthy, clear.
-Include LocalBusiness schema and keep performance (fast LCP, optimized images).
+# Thatched Roof Insurance Website
 
+## Overview
+Specialist insurance website for UK thatched property owners. Built with Next.js 14, TypeScript, and Tailwind CSS. Focus on providing expert insurance quotes, compliance guidance, and educational content about thatched roof properties.
+
+## Primary Goals
+- Attract UK thatched property owners seeking specialist insurance
+- Highlight 2025/2026 chimney and stove regulations and requirements
+- Drive quote requests through online form
+- Provide compliance guidance and educational content
+- Build trust through specialist expertise and transparent information
+
+## Key Pages & Structure
+
+### Main Pages
+- `/` - Homepage with hero, trust bar, why choose us, coverage, claims process, reviews, FAQs, articles
+- `/quote` - Multi-step quote form (7 steps) for getting insurance quotes
+- `/blog` - Blog index page listing all articles
+- `/blog/[slug]` - Individual blog post pages with breadcrumbs and related articles
+
+### Service Pages
+- `/buildings-insurance` - Buildings insurance information
+- `/contents-insurance` - Contents insurance information
+- `/combined-insurance` - Combined buildings and contents insurance
+
+### Location Pages
+- `/thatched-roof-insurance-[location]` - Location-specific pages for:
+  - Buckinghamshire, Cambridgeshire, Cotswolds, Devon, Dorset, Hampshire, Norfolk, Oxfordshire, Somerset, Wiltshire
+
+### Information Pages
+- `/about` - Company information and team
+- `/contact` - Contact page
+- `/locations` - Locations coverage page
+- `/partners` - Partners information
+- `/complaints-procedure` - Complaints process
+- `/privacy-policy` - Privacy policy
+- `/cookie-policy` - Cookie policy
+- `/terms-of-service` - Terms of service
+
+## Blog Content
+Blog posts are stored in `src/data/articles.ts` with the following categories:
+- Regulations (chimney regulations, woodburner rules)
+- Costs (insurance costs, roof costs per m²)
+- Insurance (commercial property, Grade II checklist, fire risk, cost reduction)
+- Maintenance (roof lifespan, maintenance guides)
+
+Key blog posts include:
+- Thatched Roof Chimney Regulations 2025
+- How Much Does Thatched Roof Insurance Really Cost in 2026?
+- 7 Proven Ways to Reduce the Cost of Insuring a Thatched Cottage
+- Thatched Roof Fire Risk: What Insurers Look For Before Offering Cover
+- Woodburners, Chimneys and Thatched Roofs: Insurance Rules Homeowners Can't Ignore
+- Why Is Thatched Cottage Insurance Expensive?
+- Grade II Thatched Cottage Insurance: Checklist Before You Get a Quote
+- How Long Does a Thatched Roof Last?
+- Thatched Roof Cost Per M2: A Comprehensive UK Pricing Guide
+- Thatched Commercial Property Insurance: Pubs, B&Bs and Holiday Lets
+- Does Home Insurance Cover Roof Damage on a Thatched Property?
+
+## Technical Stack
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS with custom design system
+- **UI Components**: Radix UI primitives with shadcn/ui
+- **Forms**: React Hook Form with Zod validation
+- **Fonts**: Inter (sans-serif), Playfair Display (serif for headings)
+- **Images**: Next.js Image component with optimization
+
+## Design System
+- **Colors**: Clean black & white theme with primary/foreground/background variables
+- **Logo**: Two versions - `logo.png` (white, for transparent header) and `logo_black.png` (black, for light header)
+- **Logo Size**: 192px × 62px (reduced by 20% from original 240px × 77px)
+- **Header**: Responsive header with transparent mode (homepage) and light mode (other pages)
+- **Components**: Reusable components in `src/components/` including Header, Footer, Hero, QuoteForm, etc.
+
+## Key Features
+- Multi-step quote form with progress tracking
+- Blog system with internal linking between articles
+- Location-specific landing pages
+- SEO optimized with structured data (FAQ schema, Article schema)
+- Responsive design for mobile and desktop
+- Fast performance with optimized images and lazy loading
+
+## Internal Linking Strategy
+- Blog posts include internal links to related articles using markdown-style links: `[text](/blog/slug)`
+- Homepage anchors: `#why-choose-us`, `#coverage`, `#claims`, `#reviews`, `#faq`
+- Main pillar page: `/thatched-roof-insurance` (if exists)
+- Quote page: `/quote`
+
+## Tone & Style
+- Specialist, trustworthy, clear
+- Professional but approachable
+- Focus on expertise and compliance
+- Educational rather than salesy
+
+## SEO Considerations
+- LocalBusiness schema included
+- Performance optimized (fast LCP, optimized images)
+- Canonical URLs set for all pages
+- Open Graph and Twitter card metadata
+- Sitemap generated automatically
+
+## Important Notes
+- Header logo sizing is critical - must be consistent across all pages (192px × 62px)
+- Blog post images should be optimized (not too large) to avoid push failures
+- Internal links in blog posts use markdown format: `[text](/blog/slug)`
+- Header component supports two modes: "transparent" (homepage) and "light" (other pages)
+- Quote form is a multi-step process with 7 steps total
