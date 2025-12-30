@@ -95,30 +95,31 @@ export default function SomersetPage() {
                   </p>
                   <ul className="list-disc list-inside space-y-2 ml-4">
                     <li>Rural locations across the county may affect fire service access</li>
-                    <li>Many properties are listed (Grade II common) requiring sympathetic restoration</li>
+                    <li>Many properties are listed (Grade II common) requiring sympathetic restoration. See our <Link href="/blog/grade-2-thatched-cottage-insruance-checklist" className="text-primary font-semibold hover:underline">Grade II thatched cottage insurance checklist</Link> for guidance.</li>
                     <li>Traditional building methods and materials must be used for repairs</li>
                     <li>Proximity to other thatched properties in concentrated areas</li>
                     <li>Agricultural outbuildings may require additional cover</li>
+                    <li>Fire safety is critical - see our guide on <Link href="/blog/thatched-roof-fire-risk-insurer-checks" className="text-primary font-semibold hover:underline">what insurers look for regarding fire risk</Link></li>
                   </ul>
                   <p>
-                    Our specialist policies understand these Somerset-specific requirements and work with insurers who appreciate the county's thatched property landscape.
+                    Our specialist policies understand these Somerset-specific requirements and work with insurers who appreciate the county's thatched property landscape. Understanding <Link href="/blog/why-is-thatched-cottage-insurance-expensive" className="text-primary font-semibold hover:underline">why thatched cottage insurance is expensive</Link> helps explain the specialist nature of cover needed.
                   </p>
                 </div>
               </div>
 
-              <div className="bg-muted rounded-xl p-8">
+              <div className="bg-muted rounded-xl p-8 mb-8">
                 <h2 className="font-serif text-2xl font-semibold text-foreground mb-4">Getting Insurance for Your Somerset Thatched Property</h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   Whether your Somerset thatched property is in the Mendips, the Quantocks, the Levels, or one of Somerset's historic villages, we can help you find appropriate insurance cover. Our team understands Somerset's thatched property market and can guide you through:
                 </p>
-                <ul className="space-y-3 text-muted-foreground">
+                <ul className="space-y-3 text-muted-foreground mb-6">
                   <li className="flex items-start gap-3">
                     <span className="text-primary mt-1">✓</span>
-                    <span>Accurate rebuild cost assessments for Somerset's traditional building methods</span>
+                    <span>Accurate rebuild cost assessments for Somerset's traditional building methods. Learn about <Link href="/blog/thatched-roof-cost-perm2" className="text-primary font-semibold hover:underline">thatched roof costs per square metre</Link>.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-primary mt-1">✓</span>
-                    <span>Understanding listed building requirements</span>
+                    <span>Understanding listed building requirements and compliance</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-primary mt-1">✓</span>
@@ -126,9 +127,39 @@ export default function SomersetPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-primary mt-1">✓</span>
-                    <span>Fire safety considerations for rural Somerset locations</span>
+                    <span>Fire safety considerations for rural Somerset locations, including <Link href="/blog/thatched-roof-chimney-regulations" className="text-primary font-semibold hover:underline">chimney regulations for thatched properties</Link></span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-primary mt-1">✓</span>
+                    <span>Ways to <Link href="/blog/reduce-thatched-cottage-insurance-cost" className="text-primary font-semibold hover:underline">reduce thatched cottage insurance costs</Link> through fire safety and maintenance</span>
                   </li>
                 </ul>
+              </div>
+
+              {/* Related Resources */}
+              <div className="bg-card border border-border rounded-xl p-8">
+                <h2 className="font-serif text-2xl font-semibold text-foreground mb-4">Helpful Resources for Somerset Thatched Property Owners</h2>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Explore our expert guides to help you understand and manage your Somerset thatched property insurance:
+                </p>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <Link href="/blog/grade-2-thatched-cottage-insruance-checklist" className="group bg-muted rounded-lg p-4 hover:bg-muted/80 transition-colors">
+                    <h3 className="font-serif text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Grade II Thatched Cottage Insurance Checklist</h3>
+                    <p className="text-muted-foreground text-sm">Essential preparation guide for listed property insurance quotes.</p>
+                  </Link>
+                  <Link href="/blog/thatched-roof-fire-risk-insurer-checks" className="group bg-muted rounded-lg p-4 hover:bg-muted/80 transition-colors">
+                    <h3 className="font-serif text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">What Insurers Look For Regarding Fire Risk</h3>
+                    <p className="text-muted-foreground text-sm">Understanding fire risk assessment for thatched properties.</p>
+                  </Link>
+                  <Link href="/blog/thatched-roof-chimney-regulations" className="group bg-muted rounded-lg p-4 hover:bg-muted/80 transition-colors">
+                    <h3 className="font-serif text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Thatched Roof Chimney Regulations 2025</h3>
+                    <p className="text-muted-foreground text-sm">Complete guide to 2025 chimney regulations and compliance.</p>
+                  </Link>
+                  <Link href="/blog/reduce-thatched-cottage-insurance-cost" className="group bg-muted rounded-lg p-4 hover:bg-muted/80 transition-colors">
+                    <h3 className="font-serif text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">7 Ways to Reduce Insurance Costs</h3>
+                    <p className="text-muted-foreground text-sm">Practical steps to lower your thatched property insurance premium.</p>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

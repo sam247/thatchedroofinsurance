@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import SpecialistCoverage from "@/components/SpecialistCoverage";
 import WhatWeCover from "@/components/WhatWeCover";
 import ClaimsProcess from "@/components/ClaimsProcess";
 import CustomerReviews from "@/components/CustomerReviews";
@@ -85,6 +86,7 @@ export default function HomePage() {
         <Hero />
         <TrustBar />
         <WhyChooseUs />
+        <SpecialistCoverage />
         <WhatWeCover />
         <ClaimsProcess />
         <CustomerReviews />
