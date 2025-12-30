@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -13,126 +13,6 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
-  const logoContainerRef = useRef<HTMLDivElement>(null);
-
-  // #region agent log
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const logData = {
-      location: 'Header.tsx:useEffect',
-      message: 'Header component mounted',
-      data: {
-        mode,
-        pathname,
-        isTransparent: mode === 'transparent',
-        logoPath: mode === 'transparent' ? '/logo.png' : '/logo_black.png'
-      },
-      timestamp: Date.now(),
-      sessionId: 'debug-session',
-      runId: 'run1',
-      hypothesisId: 'A'
-    };
-    fetch('http://127.0.0.1:7243/ingest/7b4fcb29-439d-4583-849f-65701debe772', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(logData)
-    }).catch(() => {});
-  }, [mode, pathname]);
-  // #endregion
-
-  // #region agent log
-  useEffect(() => {
-    if (typeof window === 'undefined' || !logoContainerRef.current) return;
-    const checkStyles = () => {
-      const container = logoContainerRef.current;
-      if (!container) return;
-      const image = container.querySelector('img') as HTMLImageElement | null;
-      if (!image) return;
-      
-      const containerStyles = window.getComputedStyle(container);
-      const imageStyles = window.getComputedStyle(image);
-      const containerRect = container.getBoundingClientRect();
-      const imageRect = image.getBoundingClientRect();
-      
-      const linkParent = container.parentElement;
-      const linkParentStyles = linkParent ? window.getComputedStyle(linkParent) : null;
-      const linkParentRect = linkParent ? linkParent.getBoundingClientRect() : null;
-      
-      const flexParent = linkParent?.parentElement;
-      const flexParentStyles = flexParent ? window.getComputedStyle(flexParent) : null;
-      const flexParentRect = flexParent ? flexParent.getBoundingClientRect() : null;
-      
-      const logData = {
-        location: 'Header.tsx:useEffect:checkStyles',
-        message: 'Logo computed styles and dimensions',
-        data: {
-          mode,
-          pathname,
-          container: {
-            width: containerStyles.width,
-            height: containerStyles.height,
-            minWidth: containerStyles.minWidth,
-            minHeight: containerStyles.minHeight,
-            maxWidth: containerStyles.maxWidth,
-            maxHeight: containerStyles.maxHeight,
-            flexShrink: containerStyles.flexShrink,
-            actualWidth: containerRect.width,
-            actualHeight: containerRect.height
-          },
-          image: {
-            width: imageStyles.width,
-            height: imageStyles.height,
-            objectFit: imageStyles.objectFit,
-            display: imageStyles.display,
-            flexShrink: imageStyles.flexShrink,
-            actualWidth: imageRect.width,
-            actualHeight: imageRect.height
-          },
-          linkParent: linkParent ? {
-            width: linkParentStyles?.width,
-            height: linkParentStyles?.height,
-            flexShrink: linkParentStyles?.flexShrink,
-            actualWidth: linkParentRect?.width,
-            actualHeight: linkParentRect?.height
-          } : null,
-          flexParent: flexParent ? {
-            width: flexParentStyles?.width,
-            height: flexParentStyles?.height,
-            justifyContent: flexParentStyles?.justifyContent,
-            actualWidth: flexParentRect?.width,
-            actualHeight: flexParentRect?.height
-          } : null
-        },
-        timestamp: Date.now(),
-        sessionId: 'debug-session',
-        runId: 'run2',
-        hypothesisId: 'B'
-      };
-      console.log('🔍 Logo Debug:', logData);
-      console.log('📏 ACTUAL LOGO SIZE:', {
-        page: pathname,
-        mode: mode,
-        logoFile: logoPath,
-        containerActual: `${containerRect.width}px × ${containerRect.height}px`,
-        imageActual: `${imageRect.width}px × ${imageRect.height}px`,
-        containerComputed: `${containerStyles.width} × ${containerStyles.height}`,
-        imageComputed: `${imageStyles.width} × ${imageStyles.height}`,
-        expected: '240px × 77px',
-        imageNaturalWidth: image.naturalWidth,
-        imageNaturalHeight: image.naturalHeight,
-        imageSrc: image.src
-      });
-      fetch('http://127.0.0.1:7243/ingest/7b4fcb29-439d-4583-849f-65701debe772', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(logData)
-      }).catch(() => {});
-    };
-    
-    const timeoutId = setTimeout(checkStyles, 100);
-    return () => clearTimeout(timeoutId);
-  }, [mode, pathname]);
-  // #endregion
 
   const navLinks = [
     { href: "#why-choose-us", label: "Why Choose Us" },
@@ -194,7 +74,6 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
           {/* Logo only */}
           <Link href="/" className="flex items-center" style={{ flexShrink: 0 }}>
             <div 
-              ref={logoContainerRef}
               className="header-logo-fix"
               style={{ 
                 width: '240px', 
@@ -219,7 +98,7 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
                   minHeight: '77px',
                   maxWidth: '240px',
                   maxHeight: '77px',
-                  objectFit: 'cover',
+                  objectFit: 'contain',
                   objectPosition: 'center',
                   display: 'block',
                   flexShrink: 0
