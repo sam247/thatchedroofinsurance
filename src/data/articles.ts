@@ -178,7 +178,7 @@ export const articles: Article[] = [
     category: "Insurance",
     title: "Grade II Thatched Cottage Insurance: Checklist Before You Get a Quote",
     excerpt:
-      "Grade II thatched cottage insurance needs more preparation than a standard home policy because insurers treat listed, thatched properties as complex, higher‑value risks that must be rebuilt sympathetically if there is a claim. A simple comparison‑site style quote often misses key details, so going through a structured checklist first usually leads to better cover and fewer surprises later.",
+      "Grade II listed thatched cottage insurance checklist. Expert guide to getting specialist cover for listed properties. Prepare the right documents and information to secure better terms. Get your quote today.",
     content: [
       "Grade II thatched cottage insurance needs more preparation than a standard home policy because insurers treat listed, thatched properties as complex, higher‑value risks that must be rebuilt sympathetically if there is a claim. A simple comparison‑site style quote often misses key details, so going through a structured checklist first usually leads to better cover and fewer surprises later.",
       "Before you ask for quotes, pin down exactly what you are insuring. Check whether the property is Grade II or Grade II* and whether the listing covers the whole building or just parts of it. Note wall construction (stone, brick, cob, timber frame), number of storeys, and any non‑standard elements such as thatched porches or outbuildings. Record roof details: type of thatch (water reed, combed wheat, long straw), approximate thickness, age of the current coat and the date of the last re‑thatch or major repair.",

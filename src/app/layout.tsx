@@ -17,9 +17,9 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const siteTitle = "Thatched Roof Insurance | UK Specialist Cover";
+const siteTitle = "Thatched Roof Insurance UK | Specialist Cover | Get Quote Today";
 const siteDescription =
-  "Specialist thatched roof insurance for UK properties. Expert cover, quick quotes, and compliance with 2025 chimney regulations. Get your quote today.";
+  "Specialist thatched roof insurance for UK properties. Expert cover for Grade II listed cottages, fire safety compliance, and specialist rebuild costs. Get your quote today. Rated 4.9/5.";
 
 export const metadata: Metadata = {
   title: siteTitle,

@@ -53,6 +53,10 @@ const faqs = [
     question: "Can I get insurance for a listed thatched building?",
     answer: "Absolutely. We specialise in insuring listed thatched properties and understand the additional requirements for repairs using traditional materials and methods. Listed building status doesn't prevent you from getting comprehensive cover.",
   },
+  {
+    question: "How can I get cheap thatched roof home insurance?",
+    answer: "While thatched roof insurance is typically more expensive than standard home insurance, you can reduce costs by investing in fire safety measures (regular chimney sweeping, lined flues, fire barriers), maintaining accurate rebuild values, keeping good documentation, and working with specialist brokers. See our guide on reducing thatched cottage insurance costs for detailed advice.",
+  },
 ];
 
 export default function HomePage() {
