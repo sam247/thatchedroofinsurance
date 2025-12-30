@@ -42,21 +42,21 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
     <>
       <style dangerouslySetInnerHTML={{__html: `
         header .header-logo-fix {
-          width: 240px !important;
-          height: 77px !important;
-          min-width: 240px !important;
-          min-height: 77px !important;
-          max-width: 240px !important;
-          max-height: 77px !important;
+          width: 192px !important;
+          height: 62px !important;
+          min-width: 192px !important;
+          min-height: 62px !important;
+          max-width: 192px !important;
+          max-height: 62px !important;
           flex-shrink: 0 !important;
         }
         header .header-logo-fix img {
-          width: 240px !important;
-          height: 77px !important;
-          min-width: 240px !important;
-          min-height: 77px !important;
-          max-width: 240px !important;
-          max-height: 77px !important;
+          width: 192px !important;
+          height: 62px !important;
+          min-width: 192px !important;
+          min-height: 62px !important;
+          max-width: 192px !important;
+          max-height: 62px !important;
           object-fit: contain !important;
           display: block !important;
           flex-shrink: 0 !important;
@@ -76,12 +76,12 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
             <div 
               className="header-logo-fix"
               style={{ 
-                width: '240px', 
-                height: '77px', 
-                minWidth: '240px', 
-                minHeight: '77px', 
-                maxWidth: '240px', 
-                maxHeight: '77px',
+                width: '192px', 
+                height: '62px', 
+                minWidth: '192px', 
+                minHeight: '62px', 
+                maxWidth: '192px', 
+                maxHeight: '62px',
                 flexShrink: 0,
                 position: 'relative'
               }}
@@ -89,15 +89,15 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
               <img
                 src={logoPath}
                 alt="Thatched Roof Insurance logo"
-                width={240}
-                height={77}
+                width={192}
+                height={62}
                 style={{
-                  width: '240px',
-                  height: '77px',
-                  minWidth: '240px',
-                  minHeight: '77px',
-                  maxWidth: '240px',
-                  maxHeight: '77px',
+                  width: '192px',
+                  height: '62px',
+                  minWidth: '192px',
+                  minHeight: '62px',
+                  maxWidth: '192px',
+                  maxHeight: '62px',
                   objectFit: 'contain',
                   objectPosition: 'center',
                   display: 'block',
