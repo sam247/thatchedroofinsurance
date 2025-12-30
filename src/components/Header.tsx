@@ -109,6 +109,15 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
         hypothesisId: 'B'
       };
       console.log('🔍 Logo Debug:', logData);
+      console.log('📏 ACTUAL LOGO SIZE:', {
+        page: pathname,
+        mode: mode,
+        containerActual: `${containerRect.width}px × ${containerRect.height}px`,
+        imageActual: `${imageRect.width}px × ${imageRect.height}px`,
+        containerComputed: `${containerStyles.width} × ${containerStyles.height}`,
+        imageComputed: `${imageStyles.width} × ${imageStyles.height}`,
+        expected: '240px × 77px'
+      });
       fetch('http://127.0.0.1:7243/ingest/7b4fcb29-439d-4583-849f-65701debe772', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -146,6 +155,29 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
   const logoPath = isTransparent ? "/logo.png" : "/logo_black.png";
 
   return (
+    <>
+      <style dangerouslySetInnerHTML={{__html: `
+        header .header-logo-fix {
+          width: 240px !important;
+          height: 77px !important;
+          min-width: 240px !important;
+          min-height: 77px !important;
+          max-width: 240px !important;
+          max-height: 77px !important;
+          flex-shrink: 0 !important;
+        }
+        header .header-logo-fix img {
+          width: 240px !important;
+          height: 77px !important;
+          min-width: 240px !important;
+          min-height: 77px !important;
+          max-width: 240px !important;
+          max-height: 77px !important;
+          object-fit: contain !important;
+          display: block !important;
+          flex-shrink: 0 !important;
+        }
+      `}} />
     <header
       className={cn(
         "top-0 left-0 right-0 z-50",
@@ -159,6 +191,7 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
           <Link href="/" className="flex items-center" style={{ flexShrink: 0 }}>
             <div 
               ref={logoContainerRef}
+              className="header-logo-fix"
               style={{ 
                 width: '240px', 
                 height: '77px', 
@@ -280,6 +313,7 @@ const Header = ({ mode = "transparent" }: { mode?: HeaderMode }) => {
         )}
       </div>
     </header>
+    </>
   );
 };
 
