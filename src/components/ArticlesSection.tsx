@@ -20,7 +20,16 @@ const ArticlesSection = () => {
 
         {/* Articles Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {articles.slice(0, 3).map((article) => (
+          {[...articles].sort((a, b) => {
+            // Parse "Month Year" format dates and sort newest first
+            const parseDate = (dateStr: string) => {
+              const [month, year] = dateStr.split(' ');
+              const monthIndex = ['January', 'February', 'March', 'April', 'May', 'June', 
+                'July', 'August', 'September', 'October', 'November', 'December'].indexOf(month);
+              return new Date(parseInt(year), monthIndex);
+            };
+            return parseDate(b.date).getTime() - parseDate(a.date).getTime();
+          }).slice(0, 3).map((article) => (
             <article
               key={article.slug}
               className="bg-card rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-all duration-300 group"

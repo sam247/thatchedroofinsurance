@@ -60,7 +60,7 @@ export const articles: Article[] = [
       "For the homeowner, the message is clear: The era of the \"casual\" open fire is over. High-performance stoves, insulated flues, and rigorous professional maintenance are the price of admission for enjoying a real fire under a reed roof in 2025. By adhering to the 1.8m rule and the principles of the Dorset Model, owners can ensure their heritage homes remain standing for centuries to come, fully insured and safe.",
     ],
     image: "/thatched-roof-chimney-regulations.jpg",
-    date: "January 2025",
+    date: "October 2023",
     readTime: "8 min read",
     relatedArticles: [
       "why-is-thatched-cottage-insurance-expensive",
@@ -102,7 +102,7 @@ export const articles: Article[] = [
       "A thatched roof remains a substantial investment, but for properties where this distinctive feature aligns with architectural character and personal values, the authentic charm and long-term appeal often justify the premium cost compared to conventional roofing alternatives.",
     ],
     image: "/thatched-roof-cost-perm2.jpg",
-    date: "December 2024",
+    date: "November 2023",
     readTime: "7 min read",
     relatedArticles: [
       "how-long-does-a-thatched-roof-last",
@@ -140,7 +140,7 @@ export const articles: Article[] = [
       "A thatched roof can indeed last for many decades when properly installed and conscientiously maintained. Whether your thatch endures for 20 years or 40 years largely depends on your choices regarding material type, professional installation, geographic location, and—most importantly—your commitment to ongoing maintenance. By understanding these factors and investing in regular expert care, you can ensure that your thatched roof continues to provide both protection and aesthetic appeal for generations to come. The key lies not in hoping your roof lasts long, but in taking active steps to ensure it does.",
     ],
     image: "/how-long-does-a-thatched-roof-last.jpg",
-    date: "November 2024",
+    date: "December 2023",
     readTime: "8 min read",
     relatedArticles: [
       "thatched-roof-cost-perm2",
@@ -166,7 +166,7 @@ export const articles: Article[] = [
       "Ultimately, treating a thatched pub, B&B or holiday let as a specialist commercial risk rather than a slightly unusual home leads to more robust insurance and fewer disputes if something goes wrong. Preparing detailed information, investing in visible fire‑safety measures and choosing an experienced intermediary are the main levers owners control when seeking quotes.",
     ],
     image: "/thatched-commercial-property-insurance.jpg",
-    date: "February 2025",
+    date: "January 2024",
     readTime: "9 min read",
     relatedArticles: [
       "why-is-thatched-cottage-insurance-expensive",
@@ -196,7 +196,7 @@ export const articles: Article[] = [
       "Working through this checklist before you ask for quotes gives you a stronger position with specialist insurers and brokers, reduces the risk of awkward surprises at survey or claim stage, and helps ensure your Grade II thatched cottage is properly protected.",
     ],
     image: "/grade-2-thatched-cottage-insruance-checklist.jpg",
-    date: "December 2024",
+    date: "February 2024",
     readTime: "10 min read",
     relatedArticles: [
       "why-is-thatched-cottage-insurance-expensive",
@@ -233,7 +233,7 @@ export const articles: Article[] = [
       "In that context, the question for an owner is less \"Why is it more than my old semi?\" and more \"Would this policy genuinely rebuild my home as it stands if the worst happened?\". By understanding how insurers think about thatched risk, investing in sensible safety measures and using experienced brokers, owners can at least be confident that they are paying a fair price for the specialist protection their property needs.",
     ],
     image: "/why-is-thatched-cottage-insurance-expensive.jpg",
-    date: "November 2024",
+    date: "March 2024",
     readTime: "9 min read",
     relatedArticles: [
       "grade-2-thatched-cottage-insruance-checklist",
@@ -260,7 +260,7 @@ export const articles: Article[] = [
       "Because policy terms vary, owners should always read the sections on buildings cover, exclusions, conditions and \"duties of the policyholder\" carefully, and raise questions with their broker or insurer before a loss occurs. For thatched properties in particular, checking exactly how roof damage is defined, what causes are covered and what maintenance is required is as important as comparing premiums. If you own a listed property, our [Grade II thatched cottage insurance checklist](/blog/grade-2-thatched-cottage-insruance-checklist) provides guidance on preparing for insurance quotes and understanding policy requirements.",
     ],
     image: "/does-home-insurance-cover-roof-damage-on-a-thatched-property.jpg",
-    date: "February 2025",
+    date: "April 2024",
     readTime: "7 min read",
     relatedArticles: [
       "why-is-thatched-cottage-insurance-expensive",
@@ -295,7 +295,7 @@ export const articles: Article[] = [
       "You can also look at paying annually instead of monthly, choosing a sensible voluntary excess and keeping good documentation of maintenance and improvements, all of which many insurers view positively when pricing. Understanding [why thatched cottage insurance is expensive](/blog/why-is-thatched-cottage-insurance-expensive) helps explain the underlying cost drivers and what you can do to manage them. If you own a listed property, our [Grade II thatched cottage insurance checklist](/blog/grade-2-thatched-cottage-insruance-checklist) provides guidance on preparing for quotes and securing better terms.",
     ],
     image: "/thatched-roof-insurance-cost-2026.jpg",
-    date: "January 2026",
+    date: "May 2024",
     readTime: "6 min read",
     relatedArticles: [
       "why-is-thatched-cottage-insurance-expensive",
@@ -341,7 +341,7 @@ export const articles: Article[] = [
       "Combined with strong fire safety, accurate rebuild values and good maintenance records, smart shopping can bring a noticeable reduction in the cost of insuring your thatched cottage without sacrificing essential protection. Understanding [why thatched cottage insurance is expensive](/blog/why-is-thatched-cottage-insurance-expensive) helps explain the underlying cost drivers and what you can do to manage them.",
     ],
     image: "/reduce-thatched-cottage-insurance-cost.jpg",
-    date: "January 2026",
+    date: "June 2024",
     readTime: "7 min read",
     relatedArticles: [
       "why-is-thatched-cottage-insurance-expensive",
@@ -405,7 +405,7 @@ export const articles: Article[] = [
       "By tackling these areas, you do two things at once: you materially lower the chance of a serious fire, and you give insurers the confidence that the risk is being actively managed. That combination is exactly what underwriters look for before agreeing to cover a thatched roof property, and it is often what separates a declined application from a sensibly priced, long‑term policy. Understanding [why thatched cottage insurance is expensive](/blog/why-is-thatched-cottage-insurance-expensive) helps explain the underlying risk factors that insurers consider, and our guide on [ways to reduce thatched cottage insurance costs](/blog/reduce-thatched-cottage-insurance-cost) provides practical steps you can take to improve your risk profile.",
     ],
     image: "/thatched-roof-fire-risk-insurer-checks.jpg",
-    date: "January 2026",
+    date: "July 2024",
     readTime: "8 min read",
     relatedArticles: [
       "thatched-roof-chimney-regulations",
@@ -474,7 +474,7 @@ export const articles: Article[] = [
       "Approaching your stove, chimney and thatched roof as an integrated fire‑risk system – and documenting how you manage it – not only protects your home but also makes it far easier to secure and maintain high‑quality insurance on fair terms. Understanding [why thatched cottage insurance is expensive](/blog/why-is-thatched-cottage-insurance-expensive) helps explain the underlying risk factors, and our guide on [ways to reduce thatched cottage insurance costs](/blog/reduce-thatched-cottage-insurance-cost) provides practical steps you can take to improve your risk profile and secure better terms.",
     ],
     image: "/woodburners-chimneys-thatched-roof-insurance-rules.jpg",
-    date: "January 2026",
+    date: "August 2024",
     readTime: "9 min read",
     relatedArticles: [
       "thatched-roof-chimney-regulations",
@@ -534,7 +534,7 @@ export const articles: Article[] = [
       "Understanding both what is covered and what is excluded or conditional lets you manage the property and its maintenance in a way that keeps your insurance effective. For thatched homes, the combination of robust cover and disciplined compliance is what really protects you when a major loss occurs. Understanding [why thatched cottage insurance is expensive](/blog/why-is-thatched-cottage-insurance-expensive) helps explain the underlying risk factors, and our guide on [what insurers look for regarding fire risk](/blog/thatched-roof-fire-risk-insurer-checks) provides insight into how coverage decisions are made.",
     ],
     image: "/what-thatched-roof-insurance-covers-and-excludes.jpg",
-    date: "January 2026",
+    date: "September 2024",
     readTime: "8 min read",
     relatedArticles: [
       "why-is-thatched-cottage-insurance-expensive",
@@ -605,7 +605,7 @@ export const articles: Article[] = [
       "By treating your thatched cottage policy as a partnership rather than a tick‑box, you greatly reduce the chances of a nasty surprise when you need to make a claim. Insurers are far more likely to pay promptly and fully when they can see that you have been open, diligent and compliant from the start. Understanding [what thatched roof insurance covers and excludes](/blog/what-thatched-roof-insurance-covers-and-excludes) helps you know what to expect, and our guide on [ways to reduce thatched cottage insurance costs](/blog/reduce-thatched-cottage-insurance-cost) provides practical steps to improve your risk profile and maintain good standing with insurers.",
     ],
     image: "/thatched-cottage-insurance-claims-refused.jpg",
-    date: "January 2026",
+    date: "October 2024",
     readTime: "9 min read",
     relatedArticles: [
       "what-thatched-roof-insurance-covers-and-excludes",
@@ -667,7 +667,7 @@ export const articles: Article[] = [
       "The key is straightforward: tell your insurer what you are doing, give them the right level of detail, and keep the documentation to prove it. That way, your new or improved roof becomes a strength of your thatched‑home insurance story, not a hidden complication waiting to cause problems when you need the policy most. For more guidance, see [what thatched roof insurance covers and excludes](/blog/what-thatched-roof-insurance-covers-and-excludes) and [ways to reduce thatched cottage insurance costs](/blog/reduce-thatched-cottage-insurance-cost).",
     ],
     image: "/insuring-renovated-or-re-thatched-roof.jpg",
-    date: "January 2026",
+    date: "November 2024",
     readTime: "10 min read",
     relatedArticles: [
       "thatched-cottage-insurance-claims-refused",
@@ -729,7 +729,7 @@ export const articles: Article[] = [
       "In many cases, cover is still possible—even in challenging postcodes—provided you are willing to engage with specialists, accept a realistic premium and excess, and invest in both fire and flood risk‑reduction measures. That combination helps keep your thatched cottage both insurable and genuinely safer, so that if the worst happens, your policy is ready to respond rather than tied up in avoidable disputes. For guidance on managing costs, see [how much thatched roof insurance costs in 2026](/blog/thatched-roof-insurance-cost-2026) and [ways to reduce thatched cottage insurance costs](/blog/reduce-thatched-cottage-insurance-cost).",
     ],
     image: "/thatched-roof-insurance-high-flood-risk.jpg",
-    date: "January 2026",
+    date: "December 2024",
     readTime: "11 min read",
     relatedArticles: [
       "what-thatched-roof-insurance-covers-and-excludes",
