@@ -129,22 +129,6 @@ const CustomerReviews = () => {
             </div>
           ))}
         </div>
-
-        {/* Trust Badges */}
-        <div className="mt-12 flex flex-wrap justify-center items-center gap-8 opacity-60">
-          <div className="text-center">
-            <p className="font-bold text-foreground">Trustpilot</p>
-            <p className="text-sm text-muted-foreground">Excellent</p>
-          </div>
-          <div className="text-center">
-            <p className="font-bold text-foreground">Google Reviews</p>
-            <p className="text-sm text-muted-foreground">4.9 Stars</p>
-          </div>
-          <div className="text-center">
-            <p className="font-bold text-foreground">Feefo</p>
-            <p className="text-sm text-muted-foreground">Platinum Service</p>
-          </div>
-        </div>
       </div>
     </section>
   );

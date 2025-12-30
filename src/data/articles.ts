@@ -242,7 +242,7 @@ export const articles: Article[] = [
     ],
   },
   {
-    slug: "does-home-insurnace-cover-roof-damage-on-a-thatched-proerpty",
+    slug: "does-home-insurance-cover-roof-damage-on-a-thatched-property",
     category: "Insurance",
     title: "Does Home Insurance Cover Roof Damage on a Thatched Property?",
     excerpt:
@@ -259,7 +259,7 @@ export const articles: Article[] = [
       "Many mainstream home insurers either decline thatched properties altogether or impose significant exclusions and higher excesses on roof‑related claims. Specialist providers, on the other hand, design wordings around thatch risks and are usually clearer about what is and is not covered, including full or partial roof reinstatement after an insured event. Understanding [why thatched cottage insurance is expensive](/blog/why-is-thatched-cottage-insurance-expensive) helps explain why specialist cover is necessary.",
       "Because policy terms vary, owners should always read the sections on buildings cover, exclusions, conditions and \"duties of the policyholder\" carefully, and raise questions with their broker or insurer before a loss occurs. For thatched properties in particular, checking exactly how roof damage is defined, what causes are covered and what maintenance is required is as important as comparing premiums. If you own a listed property, our [Grade II thatched cottage insurance checklist](/blog/grade-2-thatched-cottage-insruance-checklist) provides guidance on preparing for insurance quotes and understanding policy requirements.",
     ],
-    image: "/does-home-insurnace-cover-roof-damage-on-a-thatched-proerpty.jpg",
+    image: "/does-home-insurance-cover-roof-damage-on-a-thatched-property.jpg",
     date: "February 2025",
     readTime: "7 min read",
     relatedArticles: [
