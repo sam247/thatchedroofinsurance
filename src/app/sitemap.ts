@@ -153,13 +153,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Blog post pages
-  const blogPages: MetadataRoute.Sitemap = articles.map((article) => ({
-    url: `${baseUrl}/blog/${article.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.7,
-  }));
+  // Blog post pages - use actual article dates
+  const blogPages: MetadataRoute.Sitemap = articles.map((article) => {
+    // Parse "Month Year" format to Date
+    const parseDate = (dateStr: string): Date => {
+      const [month, year] = dateStr.split(' ');
+      const monthIndex = ['January', 'February', 'March', 'April', 'May', 'June', 
+        'July', 'August', 'September', 'October', 'November', 'December'].indexOf(month);
+      return new Date(parseInt(year), monthIndex);
+    };
+    
+    return {
+      url: `${baseUrl}/blog/${article.slug}`,
+      lastModified: parseDate(article.date),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    };
+  });
 
   return [...staticPages, ...blogPages];
 }

@@ -160,6 +160,66 @@ export default function BlogPostPage({ params }: Props) {
           </div>
         </article>
 
+        {/* Related Services */}
+        <section className="mt-16 pt-16 border-t border-border max-w-4xl mx-auto">
+          <h2 className="font-serif text-2xl font-bold text-foreground mb-6">Our Insurance Services</h2>
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <Link
+              href="/buildings-insurance"
+              className="group bg-card rounded-xl border border-border p-6 hover:shadow-lg transition-all"
+            >
+              <h3 className="font-serif text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                Buildings Insurance
+              </h3>
+              <p className="text-muted-foreground text-sm mb-4">
+                Specialist cover for your thatched roof, structure, and outbuildings.
+              </p>
+              <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">
+                Learn More
+                <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
+            <Link
+              href="/contents-insurance"
+              className="group bg-card rounded-xl border border-border p-6 hover:shadow-lg transition-all"
+            >
+              <h3 className="font-serif text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                Contents Insurance
+              </h3>
+              <p className="text-muted-foreground text-sm mb-4">
+                Protect your belongings, antiques, and valuables in period properties.
+              </p>
+              <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">
+                Learn More
+                <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
+            <Link
+              href="/combined-insurance"
+              className="group bg-card rounded-xl border border-border p-6 hover:shadow-lg transition-all"
+            >
+              <h3 className="font-serif text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                Combined Insurance
+              </h3>
+              <p className="text-muted-foreground text-sm mb-4">
+                Comprehensive buildings and contents cover in one policy.
+              </p>
+              <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">
+                Learn More
+                <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
+          </div>
+          <div className="text-center">
+            <Link
+              href="/quote"
+              className="inline-flex items-center justify-center rounded-lg bg-primary text-primary-foreground px-6 py-3 font-semibold hover:bg-primary/90 transition-colors"
+            >
+              Get a Quote
+            </Link>
+          </div>
+        </section>
+
         {/* Related Articles */}
         {article.relatedArticles && article.relatedArticles.length > 0 && (
           <section className="mt-16 pt-16 border-t border-border max-w-4xl mx-auto">

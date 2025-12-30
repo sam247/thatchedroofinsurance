@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { Shield, CheckCircle, AlertTriangle, Home } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Buildings Insurance for Thatched Properties | Specialist Cover",
+  title: "Thatched Roof Buildings Insurance UK | Specialist Cover for Listed Properties",
   description:
-    "Specialist buildings insurance for thatched properties. Comprehensive cover for your thatched roof, structure, and outbuildings. Get a quote today.",
+    "Specialist buildings insurance for thatched properties in the UK. Comprehensive cover for Grade II listed cottages, thatched roofs, and outbuildings. Get a quote today.",
   alternates: {
     canonical: "https://thatchedroofinsurance.co.uk/buildings-insurance",
   },
@@ -49,8 +50,34 @@ const whatWeCover = [
 ];
 
 export default function BuildingsInsurancePage() {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Buildings Insurance",
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Thatched Roof Insurance",
+      url: "https://thatchedroofinsurance.co.uk",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "United Kingdom",
+    },
+    description: "Specialist buildings insurance for thatched properties. Comprehensive cover for your thatched roof, structure, and outbuildings.",
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "GBP",
+      availability: "https://schema.org/InStock",
+    },
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <Script
+        id="service-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Header mode="light" />
       <main>
         {/* Breadcrumbs */}
@@ -63,7 +90,7 @@ export default function BuildingsInsurancePage() {
             <div className="max-w-3xl mx-auto text-center">
               <span className="text-primary font-semibold text-sm uppercase tracking-wider">Buildings Insurance</span>
               <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mt-3 mb-4">
-                Specialist Buildings Insurance for Thatched Properties
+                Thatched Roof Buildings Insurance UK | Specialist Cover for Listed Properties
               </h1>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 Comprehensive buildings insurance designed specifically for thatched properties. Protect your home's structure, thatched roof, and outbuildings with specialist cover that understands your unique needs.
@@ -122,34 +149,88 @@ export default function BuildingsInsurancePage() {
           </div>
         </section>
 
-        {/* Important Considerations */}
+        {/* Rebuild Costs for Thatched Properties */}
         <section className="section-padding">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
-              <div className="bg-warning/10 border-l-4 border-warning p-6 rounded-r-lg mb-8">
-                <div className="flex items-start gap-3">
-                  <AlertTriangle className="w-6 h-6 text-warning flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-serif text-xl font-semibold text-foreground mb-2">Important: Rebuild Cost vs Market Value</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      For thatched properties, especially listed buildings, the rebuild cost is often significantly higher than the market value. This is because traditional materials, specialist trades, and listed building requirements make restoration expensive. We'll help you determine the correct rebuild value to ensure you're not underinsured. Learn more about <Link href="/blog/thatched-roof-cost-perm2" className="text-primary font-semibold hover:underline">thatched roof costs per square metre</Link>.
-                    </p>
+              <div className="text-center mb-12">
+                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  Understanding Rebuild Costs for Thatched Properties
+                </h2>
+                <p className="text-muted-foreground text-lg">
+                  Accurate rebuild valuations are essential for proper buildings insurance cover.
+                </p>
+              </div>
+              <div className="bg-card border border-border rounded-2xl p-8 mb-8">
+                <h3 className="font-serif text-xl font-semibold text-foreground mb-4">Why Rebuild Costs Are Higher</h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Thatched properties typically cost significantly more to rebuild than standard homes. This is due to:
+                </p>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-foreground"><strong>Specialist materials:</strong> Thatched roofs require specific materials (water reed, combed wheat reed, or long straw) that are more expensive than standard roofing materials.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-foreground"><strong>Skilled trades:</strong> Qualified thatchers are limited in number and command premium rates. Learn more about <Link href="/blog/thatched-roof-cost-perm2" className="text-primary font-semibold hover:underline">thatched roof costs per square metre</Link>.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-foreground"><strong>Listed building requirements:</strong> Grade II listed properties must use traditional materials and methods, which increases costs.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-foreground"><strong>Extended rebuild times:</strong> Thatched roof work is weather-dependent and time-consuming, increasing labour costs.</span>
+                  </li>
+                </ul>
+                <div className="bg-warning/10 border-l-4 border-warning p-6 rounded-r-lg">
+                  <div className="flex items-start gap-3">
+                    <AlertTriangle className="w-6 h-6 text-warning flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-serif text-lg font-semibold text-foreground mb-2">Important: Rebuild Cost vs Market Value</h4>
+                      <p className="text-muted-foreground leading-relaxed">
+                        For thatched properties, especially listed buildings, the rebuild cost is often significantly higher than the market value. This is because traditional materials, specialist trades, and listed building requirements make restoration expensive. We'll help you determine the correct rebuild value to ensure you're not underinsured.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Listed Building Requirements */}
+        <section className="bg-muted section-padding">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  Buildings Insurance for Listed Thatched Properties
+                </h2>
+                <p className="text-muted-foreground text-lg">
+                  Specialist cover that understands the unique requirements of Grade II listed buildings.
+                </p>
+              </div>
               <div className="grid md:grid-cols-2 gap-8">
-                <div>
+                <div className="bg-card border border-border rounded-lg p-6">
                   <Home className="w-8 h-8 text-primary mb-4" />
-                  <h3 className="font-serif text-xl font-semibold text-foreground mb-3">Listed Buildings</h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <h3 className="font-serif text-xl font-semibold text-foreground mb-3">Listed Building Status</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-4">
                     Many thatched properties are listed (Grade I, II, or II*). Our policies understand the additional requirements for repairs using traditional materials and methods, and the involvement of conservation officers.
                   </p>
-                </div>
-                <div>
-                  <Shield className="w-8 h-8 text-primary mb-4" />
-                  <h3 className="font-serif text-xl font-semibold text-foreground mb-3">Fire Safety</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Thatched roofs have specific fire risks. Our policies include appropriate cover for fire damage, and we can advise on fire safety measures that may help reduce your premium. See our guide on <Link href="/blog/thatched-roof-chimney-regulations" className="text-primary font-semibold hover:underline">chimney regulations for thatched properties</Link>.
+                    If you own a listed property, see our <Link href="/blog/grade-2-thatched-cottage-insruance-checklist" className="text-primary font-semibold hover:underline">Grade II thatched cottage insurance checklist</Link> for comprehensive guidance on preparing for insurance quotes.
+                  </p>
+                </div>
+                <div className="bg-card border border-border rounded-lg p-6">
+                  <Shield className="w-8 h-8 text-primary mb-4" />
+                  <h3 className="font-serif text-xl font-semibold text-foreground mb-3">Fire Safety Requirements</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    Thatched roofs have specific fire risks. Our policies include appropriate cover for fire damage, and we can advise on fire safety measures that may help reduce your premium.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    See our guides on <Link href="/blog/thatched-roof-chimney-regulations" className="text-primary font-semibold hover:underline">chimney regulations for thatched properties</Link> and <Link href="/blog/thatched-roof-fire-risk-insurer-checks" className="text-primary font-semibold hover:underline">what insurers look for regarding fire risk</Link>.
                   </p>
                 </div>
               </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -62,8 +63,34 @@ const specialFeatures = [
 ];
 
 export default function ContentsInsurancePage() {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Contents Insurance",
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Thatched Roof Insurance",
+      url: "https://thatchedroofinsurance.co.uk",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "United Kingdom",
+    },
+    description: "Specialist contents insurance for thatched and period properties. Cover for antiques, valuables, and high-value items in Grade II listed cottages.",
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "GBP",
+      availability: "https://schema.org/InStock",
+    },
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <Script
+        id="service-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Header mode="light" />
       <main>
         {/* Breadcrumbs */}

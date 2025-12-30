@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { Home, Package, CheckCircle, Shield, TrendingDown } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Combined Buildings & Contents Insurance for Thatched Properties",
+  title: "Combined Thatched Property Insurance | Buildings & Contents Cover UK",
   description:
-    "Combined buildings and contents insurance for thatched properties. Comprehensive cover for your home and belongings in one policy. Save time and money with our specialist combined cover.",
+    "Combined buildings and contents insurance for thatched properties in the UK. Comprehensive cover for Grade II listed cottages, antiques, and valuables in one policy. Get a quote today.",
   alternates: {
     canonical: "https://thatchedroofinsurance.co.uk/combined-insurance",
   },
@@ -47,8 +48,34 @@ const whatIncluded = [
 ];
 
 export default function CombinedInsurancePage() {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Combined Buildings and Contents Insurance",
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Thatched Roof Insurance",
+      url: "https://thatchedroofinsurance.co.uk",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "United Kingdom",
+    },
+    description: "Combined buildings and contents insurance for thatched properties. Comprehensive cover for your home and belongings in one policy.",
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "GBP",
+      availability: "https://schema.org/InStock",
+    },
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <Script
+        id="service-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Header mode="light" />
       <main>
         {/* Breadcrumbs */}
@@ -61,7 +88,7 @@ export default function CombinedInsurancePage() {
             <div className="max-w-3xl mx-auto text-center">
               <span className="text-primary font-semibold text-sm uppercase tracking-wider">Combined Insurance</span>
               <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mt-3 mb-4">
-                Combined Buildings & Contents Insurance
+                Combined Thatched Property Insurance | Buildings & Contents Cover UK
               </h1>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 Protect both your thatched property and your belongings with one comprehensive policy. Combined insurance offers convenience, potential savings, and comprehensive cover designed specifically for thatched properties.
