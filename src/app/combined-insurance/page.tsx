@@ -80,7 +80,7 @@ export default function CombinedInsurancePage() {
       <main>
         {/* Breadcrumbs */}
         <section className="container-custom pt-8">
-          <Breadcrumbs items={[{ label: "Combined Insurance", href: "/combined-insurance" }]} />
+          <Breadcrumbs items={[{ label: "Thatched roof insurance", href: "/" }, { label: "Combined Insurance", href: "/combined-insurance" }]} />
         </section>
         {/* Hero Section */}
         <section className="bg-muted py-12 md:py-16">

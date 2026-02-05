@@ -52,7 +52,7 @@ const WhyChooseUs = () => {
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">Why Choose Us</span>
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
-            Specialists in Thatched Property Insurance
+            Why Choose Our Thatched Roof Insurance
           </h2>
           <p className="text-muted-foreground text-lg">
             We've been protecting thatched homes for over three decades. Our expertise means you get the right cover at the right price. <Link href="/about" className="text-primary font-semibold hover:underline">Learn more about us</Link> or <Link href="/contact" className="text-primary font-semibold hover:underline">get in touch</Link>.

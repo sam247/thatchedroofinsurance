@@ -77,7 +77,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-background/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-background/60">
             <p>© {currentYear} Thatched Roof Insurance. All rights reserved.</p>
-            <p>Authorised and regulated by the Financial Conduct Authority (FCA)</p>
+            <p>Quotes are provided by insurers authorised and regulated by the Financial Conduct Authority (FCA).</p>
           </div>
         </div>
       </div>

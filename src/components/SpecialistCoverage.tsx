@@ -65,7 +65,7 @@ const SpecialistCoverage = () => {
           <div className="text-center mb-12">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Listed Properties</span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
-              Specialist Coverage for Grade II Listed Thatched Properties
+              Specialist Coverage for Grade II Listed Thatched Roofs
             </h2>
             <p className="text-muted-foreground text-lg">
               Many thatched properties are Grade II listed, requiring specialist insurance that understands listed building requirements and traditional restoration methods.
@@ -124,7 +124,7 @@ const SpecialistCoverage = () => {
           <div className="text-center mb-12">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Competitive Pricing</span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
-              Competitive Quotes for Thatched Properties
+              Competitive Quotes for Thatched Roof Insurance
             </h2>
             <p className="text-muted-foreground text-lg">
               While thatched roof insurance is typically more expensive than standard home insurance, we work to secure competitive quotes through specialist markets and risk management.

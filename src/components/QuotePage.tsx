@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
@@ -42,6 +43,10 @@ const QuotePage = () => {
       <Header mode="light" />
       <main className="bg-muted min-h-screen">
         <section className="container-custom py-4 md:py-6">
+          <p className="max-w-4xl mx-auto text-center text-sm text-muted-foreground mb-2">
+            <Link href="/" className="text-primary hover:underline">Thatched roof insurance</Link>
+            {" "}→ Get a quote
+          </p>
           <div className="max-w-4xl mx-auto text-center mb-4">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Get a Quote</span>
             <h1 className="font-serif text-2xl md:text-3xl font-bold text-foreground mt-1 mb-1">

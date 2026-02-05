@@ -17,22 +17,17 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const siteTitle = "Thatched Roof Insurance UK | Specialist Cover | Get Quote Today";
+const siteTitle = "Thatched Roof Insurance UK | Get a Quote";
 const siteDescription =
-  "Specialist thatched roof insurance for UK properties. Expert cover for Grade II listed cottages, fire safety compliance, and specialist rebuild costs. Get your quote today. Rated 4.9/5.";
+  "Get a thatched roof insurance quote. Specialist thatched roof insurance for fire safety compliance and rebuild costs. Rated 4.9/5.";
 
 export const metadata: Metadata = {
   title: siteTitle,
   description: siteDescription,
   keywords: [
     "thatched roof insurance",
-    "thatched property cover",
-    "buildings insurance",
-    "contents insurance",
-    "specialist home insurance",
-    "thatched cottage insurance",
-    "grade 2 listed thatched insurance",
     "thatched roof insurance UK",
+    "specialist thatched roof insurance",
   ],
   alternates: {
     canonical: "https://thatchedroofinsurance.co.uk",

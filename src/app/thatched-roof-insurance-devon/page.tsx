@@ -32,14 +32,14 @@ export default function DevonPage() {
       <Header mode="light" />
       <main>
         <section className="container-custom pt-8">
-          <Breadcrumbs items={[{ label: "Devon", href: "/thatched-roof-insurance-devon" }]} />
+          <Breadcrumbs items={[{ label: "Thatched roof insurance", href: "/" }, { label: "Locations", href: "/locations" }, { label: "Devon", href: "/thatched-roof-insurance-devon" }]} />
         </section>
         <section className="bg-muted py-12 md:py-16">
           <div className="container-custom">
             <div className="max-w-3xl mx-auto text-center">
               <span className="text-primary font-semibold text-sm uppercase tracking-wider">Devon</span>
               <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mt-3 mb-4">
-                Thatched Roof Insurance for Devon Properties
+                Thatched Roof Insurance in Devon
               </h1>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 Devon contains approximately 4,000 thatched buildings, with 23% of its listed buildings being thatched - the highest percentage of any English county. Devon also holds more smoke-blackened medieval thatch than anywhere else in the world.

@@ -32,14 +32,14 @@ export default function DorsetPage() {
       <Header mode="light" />
       <main>
         <section className="container-custom pt-8">
-          <Breadcrumbs items={[{ label: "Dorset", href: "/thatched-roof-insurance-dorset" }]} />
+          <Breadcrumbs items={[{ label: "Thatched roof insurance", href: "/" }, { label: "Locations", href: "/locations" }, { label: "Dorset", href: "/thatched-roof-insurance-dorset" }]} />
         </section>
         <section className="bg-muted py-12 md:py-16">
           <div className="container-custom">
             <div className="max-w-3xl mx-auto text-center">
               <span className="text-primary font-semibold text-sm uppercase tracking-wider">Dorset</span>
               <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mt-3 mb-4">
-                Thatched Roof Insurance for Dorset Properties
+                Thatched Roof Insurance in Dorset
               </h1>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 Dorset has the highest concentration of thatched properties in Britain, with approximately 4 thatched buildings per square mile and nearly 2,500 listed thatched structures. We specialise in insuring Dorset's unique thatched heritage.

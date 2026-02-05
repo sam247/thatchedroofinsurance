@@ -11,7 +11,7 @@ const QuoteCTA = () => {
             Ready to Protect Your Thatched Home?
           </h2>
           <p className="text-warm-foreground/80 text-lg mb-8 max-w-2xl mx-auto">
-            Get an indicative quote in just a few minutes. No obligation, no pressure – just honest pricing from specialists who understand your property.
+            Get an indicative quote in just a few minutes. No obligation, no pressure – just honest pricing from specialists who understand thatched roof insurance.
           </p>
 
           {/* CTA Buttons */}

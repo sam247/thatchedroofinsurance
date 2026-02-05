@@ -93,6 +93,9 @@ export default function AboutPage() {
               <p className="text-muted-foreground text-lg leading-relaxed">
                 With over 30 years of experience, we're the UK's leading specialist brokers for thatched property insurance. We understand the unique challenges of protecting these beautiful heritage homes.
               </p>
+              <p className="text-muted-foreground text-base mt-4 font-medium">
+                We arrange specialist thatched roof insurance with insurers who understand thatch – we are an introducer, not the insurer.
+              </p>
             </div>
           </div>
         </section>

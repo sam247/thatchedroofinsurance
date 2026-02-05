@@ -32,14 +32,14 @@ export default function CambridgeshirePage() {
       <Header mode="light" />
       <main>
         <section className="container-custom pt-8">
-          <Breadcrumbs items={[{ label: "Cambridgeshire", href: "/thatched-roof-insurance-cambridgeshire" }]} />
+          <Breadcrumbs items={[{ label: "Thatched roof insurance", href: "/" }, { label: "Locations", href: "/locations" }, { label: "Cambridgeshire", href: "/thatched-roof-insurance-cambridgeshire" }]} />
         </section>
         <section className="bg-muted py-12 md:py-16">
           <div className="container-custom">
             <div className="max-w-3xl mx-auto text-center">
               <span className="text-primary font-semibold text-sm uppercase tracking-wider">Cambridgeshire</span>
               <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mt-3 mb-4">
-                Thatched Roof Insurance for Cambridgeshire Properties
+                Thatched Roof Insurance in Cambridgeshire
               </h1>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 Cambridgeshire records approximately 785 thatched roofs, forming part of East Anglia's secondary concentration of thatched properties. Like Norfolk, Cambridgeshire is distinguished by its use of water reed thatch rather than wheat straw.

@@ -32,14 +32,14 @@ export default function CotswoldsPage() {
       <Header mode="light" />
       <main>
         <section className="container-custom pt-8">
-          <Breadcrumbs items={[{ label: "Cotswolds", href: "/thatched-roof-insurance-cotswolds" }]} />
+          <Breadcrumbs items={[{ label: "Thatched roof insurance", href: "/" }, { label: "Locations", href: "/locations" }, { label: "Cotswolds", href: "/thatched-roof-insurance-cotswolds" }]} />
         </section>
         <section className="bg-muted py-12 md:py-16">
           <div className="container-custom">
             <div className="max-w-3xl mx-auto text-center">
               <span className="text-primary font-semibold text-sm uppercase tracking-wider">Cotswolds</span>
               <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mt-3 mb-4">
-                Thatched Roof Insurance for Cotswold Properties
+                Thatched Roof Insurance in the Cotswolds
               </h1>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 The Cotswolds, spanning parts of Gloucestershire, Oxfordshire, and other counties, is one of the primary regions for experiencing traditional thatched cottages. The area's distinctive honey-coloured stone and thatched roofs create the quintessential English countryside aesthetic.

@@ -32,12 +32,12 @@ const Hero = () => {
 
             {/* Main Headline */}
             <h1 className="font-serif text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-card leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-              Thatched Roof Insurance UK | Specialist Cover for Thatched Properties
+              Thatched Roof Insurance UK
             </h1>
 
-            {/* Subheadline */}
+            {/* Subheadline - first 150 words: thatched roof insurance and quote only; no cottage/property */}
             <p className="text-lg text-card/90 mb-8 leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-              Get expert thatched cottage insurance quotes. Cover for Grade II listed properties, fire safety compliance, and specialist rebuild costs. Rated 4.9/5 by customers.
+              Get a thatched roof insurance quote. We arrange specialist thatched roof insurance with cover for fire safety compliance and specialist rebuild costs. Rated 4.9/5 by customers.
             </p>
 
             {/* Phone CTA */}

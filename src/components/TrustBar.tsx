@@ -32,6 +32,9 @@ const TrustBar = () => {
   return (
     <section className="bg-primary py-6">
       <div className="container-custom">
+        <p className="text-center text-primary-foreground/90 text-sm mb-6">
+          We arrange specialist thatched roof insurance with insurers who understand thatch.
+        </p>
         <div className="flex flex-wrap justify-center gap-6 md:gap-12">
           {trustItems.map((item, index) => (
             <div

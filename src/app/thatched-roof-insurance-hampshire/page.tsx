@@ -32,14 +32,14 @@ export default function HampshirePage() {
       <Header mode="light" />
       <main>
         <section className="container-custom pt-8">
-          <Breadcrumbs items={[{ label: "Hampshire", href: "/thatched-roof-insurance-hampshire" }]} />
+          <Breadcrumbs items={[{ label: "Thatched roof insurance", href: "/" }, { label: "Locations", href: "/locations" }, { label: "Hampshire", href: "/thatched-roof-insurance-hampshire" }]} />
         </section>
         <section className="bg-muted py-12 md:py-16">
           <div className="container-custom">
             <div className="max-w-3xl mx-auto text-center">
               <span className="text-primary font-semibold text-sm uppercase tracking-wider">Hampshire</span>
               <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mt-3 mb-4">
-                Thatched Roof Insurance for Hampshire Properties
+                Thatched Roof Insurance in Hampshire
               </h1>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 Hampshire, particularly the New Forest area, contains a significant concentration of thatched properties. In the New Forest, approximately 20% of the 1,600 listed buildings are thatched, representing around 320 thatched structures in this area alone.

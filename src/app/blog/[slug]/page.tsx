@@ -158,6 +158,21 @@ export default function BlogPostPage({ params }: Props) {
               <p key={idx}>{parseContentWithLinks(paragraph)}</p>
             ))}
           </div>
+
+          {/* Fixed CTA: every post */}
+          <div className="mt-12 p-6 md:p-8 rounded-2xl bg-primary/10 border border-primary/20">
+            <h2 className="font-serif text-2xl font-bold text-foreground mb-2">Get a thatched roof insurance quote</h2>
+            <p className="text-muted-foreground mb-4">
+              For specialist{" "}
+              <Link href="/" className="text-primary font-semibold hover:underline">thatched roof insurance</Link> and cover options, see our main page.
+            </p>
+            <Link
+              href="/quote"
+              className="inline-flex items-center justify-center rounded-lg bg-primary text-primary-foreground px-6 py-3 font-semibold hover:bg-primary/90 transition-colors"
+            >
+              Get a thatched roof insurance quote
+            </Link>
+          </div>
         </article>
 
         {/* Related Services */}
@@ -215,7 +230,7 @@ export default function BlogPostPage({ params }: Props) {
               href="/quote"
               className="inline-flex items-center justify-center rounded-lg bg-primary text-primary-foreground px-6 py-3 font-semibold hover:bg-primary/90 transition-colors"
             >
-              Get a Quote
+              Get a thatched roof insurance quote
             </Link>
           </div>
         </section>

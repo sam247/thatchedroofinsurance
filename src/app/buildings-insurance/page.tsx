@@ -82,7 +82,7 @@ export default function BuildingsInsurancePage() {
       <main>
         {/* Breadcrumbs */}
         <section className="container-custom pt-8">
-          <Breadcrumbs items={[{ label: "Buildings Insurance", href: "/buildings-insurance" }]} />
+          <Breadcrumbs items={[{ label: "Thatched roof insurance", href: "/" }, { label: "Buildings Insurance", href: "/buildings-insurance" }]} />
         </section>
         {/* Hero Section */}
         <section className="bg-muted py-12 md:py-16">
